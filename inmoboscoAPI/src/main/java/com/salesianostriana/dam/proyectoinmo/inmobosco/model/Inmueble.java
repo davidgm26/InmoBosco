@@ -33,22 +33,10 @@ public class Inmueble {
     private Tipo tipoInmueble;
 
     private String ubicacion;
+
     private double metrosCuadrados;
     private String provincia;
     private String descripcion;
 
-    // HELPERS
-
-    public void addTipo(Tipo tipo){
-        tipo.setInmueble(this);
-        this.tipoInmueble = tipo;
-    }
-
-    public void removeTipo(Tipo tipo){
-        if(tipo != null){
-            tipo.setInmueble(null);
-            this.tipoInmueble= null;
-        }
-    }
 }
 

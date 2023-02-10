@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -35,15 +36,18 @@ public class Usuario {
     private String dni;
 
     private int edad;
-    // private Date fechaNacimiento; lo mantenemos en cuarentena hasta solucionar un par de dudas
+
+    private String avatar;
+
+    private Date fechaNacimiento;
     private String telefono;
 
     private String email;
 
     @OneToMany(mappedBy = "propietario")
     private List<Inmueble> propiedades = new ArrayList<>();
-/*
-    @Builder.Default
+
+    @ElementCollection(targetClass=String.class)
     private List<Inmueble> inmueblesFav = new ArrayList<>();
-*/
+
 }

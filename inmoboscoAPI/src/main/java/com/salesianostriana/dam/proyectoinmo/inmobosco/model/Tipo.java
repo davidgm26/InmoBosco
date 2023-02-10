@@ -16,10 +16,8 @@ public class Tipo {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    private String tipoInmuble;
+    private String tipoInmueble;
 
-    @OneToOne(mappedBy = "tipoInmueble",cascade = CascadeType.ALL,orphanRemoval = true)
-    private Inmueble inmueble;
 
 
 
