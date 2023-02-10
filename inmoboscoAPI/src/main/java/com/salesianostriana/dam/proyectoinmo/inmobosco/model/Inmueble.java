@@ -3,7 +3,11 @@ package com.salesianostriana.dam.proyectoinmo.inmobosco.model;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.List;
+
+
 
 @Entity
 @AllArgsConstructor @NoArgsConstructor
@@ -21,7 +25,9 @@ public class Inmueble {
     @JoinColumn(name = "propietario_id")
     private Usuario propietario;
 
-    private List<String>fotos;
+    @Column(name = "fotos")
+    @Builder.Default
+    private List<String>fotos = new ArrayList<>();
     // private String tipo; esto de momento se queda en cuarentena hasta aclarar completamente todo
     private String ubicacion;
     private double metrosCuadrados;

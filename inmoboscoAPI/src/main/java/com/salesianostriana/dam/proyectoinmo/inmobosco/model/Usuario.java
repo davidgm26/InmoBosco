@@ -14,6 +14,9 @@ import java.util.List;
 @Setter
 @Builder
 public class Usuario {
+
+    //En el DTO de respuesta tienes que devolver el rol
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
@@ -37,7 +40,8 @@ public class Usuario {
 
     private String email;
 
-    @OneToMany
+    @OneToMany(mappedBy = "propietario")
+    @Builder.Default
     private List<Inmueble> propiedades = new ArrayList<>();
 /*
     @Builder.Default
