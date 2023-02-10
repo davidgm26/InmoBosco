@@ -41,7 +41,6 @@ public class Usuario {
     private String email;
 
     @OneToMany(mappedBy = "propietario")
-    @Builder.Default
     private List<Inmueble> propiedades = new ArrayList<>();
 /*
     @Builder.Default
