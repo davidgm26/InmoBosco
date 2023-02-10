@@ -5,9 +5,9 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
-
-
+import java.util.Set;
 
 @Entity
 @AllArgsConstructor @NoArgsConstructor
@@ -18,21 +18,37 @@ public class Inmueble {
     @Id
     @GeneratedValue
     private Long id;
-
-    private double precio;
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "propietario_id")
     private Usuario propietario;
 
-    @Column(name = "fotos")
-    @Builder.Default
-    private List<String>fotos = new ArrayList<>();
-    // private String tipo; esto de momento se queda en cuarentena hasta aclarar completamente todo
+    private double precio;
+
+    @Column
+    @ElementCollection(targetClass=String.class)
+    private List<String> img = new ArrayList<>();
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tipo_id")
+    private Tipo tipoInmueble;
+
     private String ubicacion;
     private double metrosCuadrados;
     private String provincia;
     private String descripcion;
 
+    // HELPERS
 
+    public void addTipo(Tipo tipo){
+        tipo.setInmueble(this);
+        this.tipoInmueble = tipo;
+    }
+
+    public void removeTipo(Tipo tipo){
+        if(tipo != null){
+            tipo.setInmueble(null);
+            this.tipoInmueble= null;
+        }
+    }
 }
+
