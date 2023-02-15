@@ -1,13 +1,19 @@
-package com.salesianostriana.dam.proyectoinmo.inmobosco.security.jwt;
+package com.salesianostriana.dam.proyectoinmo.inmobosco.security.jwt.access;
 
 import com.salesianostriana.dam.proyectoinmo.inmobosco.model.Usuario;
+import com.salesianostriana.dam.proyectoinmo.inmobosco.security.errorHandling.JwtTokenException;
+import io.jsonwebtoken.*;
+import io.jsonwebtoken.security.Keys;
+import io.jsonwebtoken.security.SignatureException;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 
+
 import javax.annotation.PostConstruct;
+import javax.crypto.SecretKey;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
@@ -51,10 +57,11 @@ public class JwtProvider {
     }
 
     public String generateToken(Usuario user) {
-        Date  tokenExpirationDateTime =
+        Date tokenExpirationDateTime =
                 Date.from(
                         LocalDateTime
                                 .now()
+                                //.plusDays(jwtLifeInDays)
                                 .plusMinutes(jwtLifeInMinutes)
                                 .atZone(ZoneId.systemDefault())
                                 .toInstant()
@@ -87,8 +94,9 @@ public class JwtProvider {
             log.info("Error con el token: " + ex.getMessage());
             throw new JwtTokenException(ex.getMessage());
         }
-        //return false;
 
     }
+
+
 
 }

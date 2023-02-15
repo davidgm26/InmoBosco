@@ -35,8 +35,11 @@ public class Inmueble {
     private String ubicacion;
 
     private double metrosCuadrados;
+
     private String provincia;
+
     private String descripcion;
+
 
 }
 
