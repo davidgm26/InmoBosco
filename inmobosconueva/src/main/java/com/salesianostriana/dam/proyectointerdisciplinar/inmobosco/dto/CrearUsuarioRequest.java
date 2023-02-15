@@ -12,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CreateUsuarioRequest {
+public class CrearUsuarioRequest {
 
     private String nombre;
 

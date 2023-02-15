@@ -1,6 +1,6 @@
 package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.service;
 
-import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto.CreateUsuarioRequest;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto.CrearUsuarioRequest;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.UserRole;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.Usuario;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.UsuarioRepository;
@@ -21,7 +21,7 @@ public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
 
-    public Usuario crearUsuario(CreateUsuarioRequest createUserRequest, EnumSet<UserRole> roles) {
+    public Usuario crearUsuario(CrearUsuarioRequest createUserRequest, EnumSet<UserRole> roles) {
 
         Usuario user = Usuario.builder()
                 .nombre(createUserRequest.getNombre())
@@ -40,12 +40,12 @@ public class UsuarioService {
 
     }
 
-    public Usuario crearUsuarioUser(CreateUsuarioRequest createUsuarioRequest) {
-        return crearUsuario(createUsuarioRequest, EnumSet.of(UserRole.USER));
+    public Usuario crearUsuarioUser(CrearUsuarioRequest crearUsuarioRequest) {
+        return crearUsuario(crearUsuarioRequest, EnumSet.of(UserRole.USER));
     }
 
-    public Usuario crearUsuarioAdmin(CreateUsuarioRequest createUsuarioRequest) {
-        return crearUsuario(createUsuarioRequest, EnumSet.of(UserRole.ADMIN));
+    public Usuario crearUsuarioAdmin(CrearUsuarioRequest crearUsuarioRequest) {
+        return crearUsuario(crearUsuarioRequest, EnumSet.of(UserRole.ADMIN));
     }
 
     public List<Usuario> findAll(){

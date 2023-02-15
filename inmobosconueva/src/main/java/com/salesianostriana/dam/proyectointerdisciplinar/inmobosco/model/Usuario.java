@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -58,7 +59,12 @@ public class Usuario implements UserDetails {
 
     private String avatar;
 
-    private Date fechaNacimiento;
+    private LocalDateTime fechaNacimiento;
+
+    private LocalDateTime fechaCreacion;
+
+    private LocalDateTime lastPasswordChangeAt = LocalDateTime.now();
+
 
     private String telefono;
 
@@ -70,6 +76,17 @@ public class Usuario implements UserDetails {
     @ElementCollection(targetClass=String.class)
     private List<Inmueble> inmueblesFav = new ArrayList<>();
 
+    @Builder.Default
+    private boolean accountNonExpired = true;
+
+    @Builder.Default
+    private boolean accountNonLocked = true;
+
+    @Builder.Default
+    private boolean credentialsNonExpired = true;
+
+    @Builder.Default
+    private boolean enabled = true;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -81,21 +98,33 @@ public class Usuario implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return accountNonExpired;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return accountNonLocked;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return credentialsNonExpired;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return enabled;
     }
+
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
 }
