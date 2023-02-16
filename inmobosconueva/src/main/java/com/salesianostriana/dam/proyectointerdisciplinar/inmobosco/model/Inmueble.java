@@ -1,6 +1,8 @@
 package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model;
 
 import lombok.*;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -9,6 +11,7 @@ import java.util.List;
 @Entity
 @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter
+@EntityListeners(AuditingEntityListener.class)
 @Builder
 public class Inmueble {
 
@@ -17,6 +20,7 @@ public class Inmueble {
     private Long id;
     @ManyToOne
     @JoinColumn(name = "propietario_id")
+    @CreatedBy
     private Usuario propietario;
 
     private double precio;

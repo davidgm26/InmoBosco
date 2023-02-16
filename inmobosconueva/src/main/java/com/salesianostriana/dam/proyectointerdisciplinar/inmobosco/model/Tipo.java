@@ -1,5 +1,6 @@
 package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model;
 
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.InmuebleRepository;
 import lombok.*;
 
 import javax.persistence.*;
@@ -17,6 +18,9 @@ public class Tipo {
     private Long id;
 
     private String tipoInmueble;
+
+    @OneToOne(mappedBy = "tipoInmueble")
+    private Inmueble inmueble;
 
 
 

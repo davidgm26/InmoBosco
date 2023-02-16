@@ -24,7 +24,6 @@ public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
 
     public Usuario crearUsuario(CrearUsuarioRequest createUserRequest, EnumSet<UserRole> roles) {
-
         Usuario user = Usuario.builder()
                 .nombre(createUserRequest.getNombre())
                 .apellidos(createUserRequest.getApellidos())
@@ -40,7 +39,6 @@ public class UsuarioService {
                 .roles(roles)
                 .build();
         return usuarioRepository.save(user);
-
     }
 
     public Usuario crearUsuarioUser(CrearUsuarioRequest crearUsuarioRequest) {

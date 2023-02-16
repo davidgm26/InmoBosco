@@ -15,12 +15,15 @@ import java.util.List;
 @RequestMapping("/inmueble")
 public class InmuebleController {
 
-    private InmuebleService inmuebleService;
+    private final InmuebleService inmuebleService;
 
     @GetMapping("/")
-    public List<Inmueble> getAll() {
+    public List<Inmueble> listarTodasLasProperties() {
         return inmuebleService.findAll();
     }
+
+
+
 
 /*
     @PreAuthorize("@inmuebleService.findById(#id).orElse(new net.openwebinars.springboot.restjwt.note.model.Note()).author == authentication.principal.getId().toString()")
