@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -13,9 +14,9 @@ import java.time.LocalDateTime;
 @SuperBuilder
 public class CrearUsuarioResponse {
 
-    private String id,userName,avatar,nombre,apellido;
+    protected String id,userName,avatar,nombre,apellido;
 
-    private LocalDateTime fechaCreacion;
+    protected LocalDate fechaCreacion;
 
 
     public static CrearUsuarioResponse fromUsuario(Usuario user){
@@ -25,6 +26,7 @@ public class CrearUsuarioResponse {
                 .id(user.getId().toString())
                 .avatar(user.getAvatar())
                 .fechaCreacion(user.getFechaCreacion())
+                .userName(user.getUsername())
                 .build();
     }
 }

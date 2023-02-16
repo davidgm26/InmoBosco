@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -20,7 +22,7 @@ public class CrearUsuarioRequest {
 
     private String password;
 
-    private String username;
+    private String userName;
 
     private String dni;
 
@@ -28,7 +30,7 @@ public class CrearUsuarioRequest {
 
     private String avatar;
 
-    private Date fechaNacimiento;
+    private LocalDate fechaNacimiento;
 
     private String telefono;
 

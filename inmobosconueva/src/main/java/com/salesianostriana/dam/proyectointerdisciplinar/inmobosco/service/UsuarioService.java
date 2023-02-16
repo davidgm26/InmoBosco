@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Optional;
@@ -32,8 +34,9 @@ public class UsuarioService {
                 .avatar(createUserRequest.getAvatar())
                 .fechaNacimiento(createUserRequest.getFechaNacimiento())
                 .telefono(createUserRequest.getTelefono())
-                .password(createUserRequest.getPassword())
-                .username(createUserRequest.getUsername())
+                .password(passwordEncoder.encode(createUserRequest.getPassword()))
+                .username(createUserRequest.getUserName())
+                .fechaCreacion(LocalDate.now())
                 .roles(roles)
                 .build();
         return usuarioRepository.save(user);

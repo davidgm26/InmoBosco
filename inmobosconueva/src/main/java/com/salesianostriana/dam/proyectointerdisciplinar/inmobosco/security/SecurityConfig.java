@@ -48,8 +48,6 @@ public class SecurityConfig {
         return authenticationManager;
 
     }
-
-
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
@@ -61,10 +59,6 @@ public class SecurityConfig {
         return authenticationProvider;
 
     }
-
-
-
-
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -83,8 +77,6 @@ public class SecurityConfig {
                                 .antMatchers("/inmueble/**").hasRole("USER")
                                 .antMatchers("/auth/register/admin").hasRole("ADMIN")
                                 .anyRequest().authenticated();
-
-
 
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
