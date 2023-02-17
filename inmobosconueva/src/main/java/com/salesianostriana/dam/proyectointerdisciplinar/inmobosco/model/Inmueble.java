@@ -41,6 +41,9 @@ public class Inmueble {
 
     private String descripcion;
 
+    @ManyToMany(mappedBy = "inmueblesFav")
+    private List<Usuario>usuariosFav;
+
 
 }
 

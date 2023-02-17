@@ -74,7 +74,7 @@ public class Usuario implements UserDetails {
     @OneToMany(mappedBy = "propietario")
     private List<Inmueble> propiedades = new ArrayList<>();
 
-    @ElementCollection(targetClass=String.class)
+    @ManyToMany(mappedBy = "usuariosFav" )
     private List<Inmueble> inmueblesFav = new ArrayList<>();
 
     @Builder.Default

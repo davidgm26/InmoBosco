@@ -1,14 +1,17 @@
 package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.controller;
 
 
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto.InmuebleResponse;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.Inmueble;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.service.InmuebleService;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.search.util.SearchCriteria;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,8 +21,15 @@ public class InmuebleController {
     private final InmuebleService inmuebleService;
 
     @GetMapping("/")
-    public List<Inmueble> listarTodasLasProperties() {
+    public List<InmuebleResponse> listarTodosLosInmuebles(@RequestParam(value = "search", required = false)String search) {
+
         return inmuebleService.findAll();
+    }
+
+
+    @GetMapping("/{id}")
+    public InmuebleResponse listarUnInmueble(@PathVariable Long id){
+        return inmuebleService.findById(id);
     }
 
 
