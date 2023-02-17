@@ -42,6 +42,5 @@ public class Inmueble {
 
     private String descripcion;
 
-
 }
 
