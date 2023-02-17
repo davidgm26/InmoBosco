@@ -27,6 +27,7 @@ public class Inmueble {
     private double precio;
 
     @Column
+    // libreria Vlad mihalcea hypersistence-utils
     @ElementCollection(targetClass=String.class)
     private List<String> img = new ArrayList<>();
 

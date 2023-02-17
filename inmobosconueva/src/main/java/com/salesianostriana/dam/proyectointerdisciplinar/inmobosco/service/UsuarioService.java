@@ -24,8 +24,8 @@ public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
 
-    public Usuario crearUsuario(CrearUsuarioRequest createUserRequest, EnumSet<UserRole> roles) throws SameUserNameException {
-        if (usuarioRepository.findFirstByUsername(createUserRequest.getUserName()).isEmpty()){
+    public Usuario crearUsuario(CrearUsuarioRequest createUserRequest, EnumSet<UserRole> roles)  {
+
             Usuario user = Usuario.builder()
                     .nombre(createUserRequest.getNombre())
                     .apellidos(createUserRequest.getApellidos())
@@ -41,19 +41,13 @@ public class UsuarioService {
                     .roles(roles)
                     .build();
             return usuarioRepository.save(user);
-        }else{
-            throw new SameUserNameException();
-        }
-
-
-
     }
 
-    public Usuario crearUsuarioUser(CrearUsuarioRequest crearUsuarioRequest) throws SameUserNameException {
+    public Usuario crearUsuarioUser(CrearUsuarioRequest crearUsuarioRequest)  {
         return crearUsuario(crearUsuarioRequest, EnumSet.of(UserRole.USER));
     }
 
-    public Usuario crearUsuarioAdmin(CrearUsuarioRequest crearUsuarioRequest) throws SameUserNameException {
+    public Usuario crearUsuarioAdmin(CrearUsuarioRequest crearUsuarioRequest)  {
         return crearUsuario(crearUsuarioRequest, EnumSet.of(UserRole.ADMIN));
     }
 

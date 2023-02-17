@@ -32,7 +32,7 @@ public class UserController {
 
 
     @PostMapping("/auth/register")
-    public ResponseEntity<CrearUsuarioResponse> crearUsuarioConRolUsuario(@RequestBody CrearUsuarioRequest crearUsuarioRequest) throws SameUserNameException {
+    public ResponseEntity<CrearUsuarioResponse> crearUsuarioConRolUsuario(@RequestBody CrearUsuarioRequest crearUsuarioRequest) {
 
         Usuario user = usuarioService.crearUsuarioUser(crearUsuarioRequest);
 
@@ -67,15 +67,14 @@ public class UserController {
 
     @PutMapping("/user/changePassword")
     public ResponseEntity<CrearUsuarioResponse> changePassword(@RequestBody ChangePasswordRequest changePasswordRequest,
-                                                               @AuthenticationPrincipal Usuario loggedUser) {
-
-        try {
+                                                       @AuthenticationPrincipal Usuario loggedUser) {
+    try {
             if (usuarioService.passwordMatch(loggedUser, changePasswordRequest.getOldPassword())) {
                 Optional<Usuario> modified = usuarioService.editPassword(loggedUser.getId(), changePasswordRequest.getNewPassword());
                 if (modified.isPresent())
                     return ResponseEntity.ok(CrearUsuarioResponse.fromUsuario(modified.get()));
             } else {
-                throw new RuntimeException();
+                 throw new RuntimeException();
             }
         } catch (RuntimeException ex) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Password Data Error");
