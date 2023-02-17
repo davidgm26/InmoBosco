@@ -48,5 +48,11 @@ public class InmuebleService {
         return inmuebleRepository.findAll(spec,pageable);
     }
 
+    public Page<InmuebleResponse>buscarTodosDeUnTipo(String tipo){
+        List<InmuebleResponse> result = inmuebleRepository.todosDeUnTipo(tipo);
+
+
+    }
+
 
 }

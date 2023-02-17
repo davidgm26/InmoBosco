@@ -19,7 +19,7 @@ public class Inmueble {
     @GeneratedValue
     private Long id;
     @ManyToOne
-    @JoinColumn(name = "propietario_id")
+    @JoinColumn(name = "propietario_id",foreignKey = @ForeignKey(name = "FK_INMUEBLE_USUARIO"))
     @CreatedBy
     private Usuario propietario;
 
@@ -43,6 +43,7 @@ public class Inmueble {
 
     @ManyToMany(mappedBy = "inmueblesFav")
     private List<Usuario>usuariosFav;
+
 
 
 }

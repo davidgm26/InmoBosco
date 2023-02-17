@@ -66,7 +66,6 @@ public class Usuario implements UserDetails {
 
     private LocalDateTime lastPasswordChangeAt = LocalDateTime.now();
 
-
     private String telefono;
 
     private String email;
@@ -74,7 +73,13 @@ public class Usuario implements UserDetails {
     @OneToMany(mappedBy = "propietario")
     private List<Inmueble> propiedades = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "usuariosFav" )
+    @ManyToMany
+    @JoinTable(joinColumns = @JoinColumn(name = "propietario_id",
+            foreignKey = @ForeignKey(name = "FK_FAVORITOS_USUARIO")),
+            inverseJoinColumns = @JoinColumn(name = "inmbueble_id",
+                    foreignKey = @ForeignKey(name = "FK_FAVORITOS_INMUEBLE")),
+            name = "favoritos"
+    )
     private List<Inmueble> inmueblesFav = new ArrayList<>();
 
     @Builder.Default
@@ -128,4 +133,22 @@ public class Usuario implements UserDetails {
         return username;
     }
 
+    public void addInmueble(Inmueble i){
+        if(this.getInmueblesFav() == null)
+            this.setInmueblesFav(new ArrayList<>());
+        this.getInmueblesFav().add(i);
+
+        if(i.getUsuariosFav() == null)
+            i.setUsuariosFav(new ArrayList<>());
+        i.getUsuariosFav().add(this);
+    }
+
+    public void removeFav(Inmueble i){
+        i.getUsuariosFav().remove(this);
+        this.getInmueblesFav().remove(i);
+    }
+
+
 }
+
+

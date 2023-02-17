@@ -6,6 +6,7 @@ import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.Inmuebl
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.service.InmuebleService;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.search.util.SearchCriteria;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -30,6 +31,12 @@ public class InmuebleController {
     @GetMapping("/{id}")
     public InmuebleResponse listarUnInmueble(@PathVariable Long id){
         return inmuebleService.findById(id);
+    }
+
+    @GetMapping("/")
+    public Page<InmuebleResponse> listarTodosDeUnTipo(String tipo){
+
+
     }
 
 
