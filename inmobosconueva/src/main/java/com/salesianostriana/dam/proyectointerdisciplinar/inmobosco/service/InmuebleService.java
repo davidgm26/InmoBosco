@@ -49,7 +49,9 @@ public class InmuebleService {
     }
 
     public Page<InmuebleResponse>buscarTodosDeUnTipo(String tipo){
-        List<InmuebleResponse> result = inmuebleRepository.todosDeUnTipo(tipo);
+        List<InmuebleResponse> result = inmuebleRepository.todosDeUnTipo(tipo).get();
+
+        return ;
 
 
     }

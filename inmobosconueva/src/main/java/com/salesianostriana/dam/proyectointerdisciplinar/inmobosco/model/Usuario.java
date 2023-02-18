@@ -49,7 +49,7 @@ public class Usuario implements UserDetails {
 
     private String password;
 
-    @ElementCollection(fetch = FetchType.EAGER)
+    @ElementCollection(fetch = FetchType.LAZY)
     private Set<UserRole> roles;
 
     private String username;
