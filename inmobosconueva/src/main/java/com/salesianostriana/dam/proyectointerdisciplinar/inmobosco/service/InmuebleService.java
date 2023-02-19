@@ -4,8 +4,8 @@ import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto.InmuebleR
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.exception.EmptyInmuebleListException;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.Inmueble;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.InmuebleRepository;
-import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.search.spec.GenericSpecificationBuilder;
-import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.search.util.SearchCriteria;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.search.spec.GenericSpecificationBuilder;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.search.util.SearchCriteria;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;

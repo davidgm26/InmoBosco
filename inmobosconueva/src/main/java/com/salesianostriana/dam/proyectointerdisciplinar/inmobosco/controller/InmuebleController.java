@@ -2,9 +2,9 @@ package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.controller;
 
 
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto.InmuebleResponse;
-import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.search.util.SearchCriteriaExtractor;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.search.util.SearchCriteriaExtractor;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.service.InmuebleService;
-import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.search.util.SearchCriteria;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.search.util.SearchCriteria;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

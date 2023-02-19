@@ -17,15 +17,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface InmuebleRepository extends JpaRepository<Inmueble, Long>, JpaSpecificationExecutor<Inmueble> {
 
-/*
-    @Query("""
-            select new com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto.InmuebleResponse(
-            t.tipoInmueble,i.descripcion,i.precio,i.ubicacion,i.metrosCuadrados)
-            from Inmueble i LEFT JOIN i.tipoInmueble t
-            where i.tipoInmueble =:tipo_id
-            """)
-    Page<InmuebleResponse> todosDeUnTipo(@Param("tipo") String tipo, Pageable pageable);
-*/
     @Query("""
                 select new com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto.InmuebleResponse(
                     t.tipoInmueble,i.descripcion,i.precio,i.ubicacion,i.metrosCuadrados)

@@ -1,4 +1,4 @@
-package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.search.util;
+package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.search.util;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
