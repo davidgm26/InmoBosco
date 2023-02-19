@@ -45,8 +45,6 @@ public class UsuarioService {
             throw new SameUserNameException();
         }
 
-
-
     }
 
     public Usuario crearUsuarioUser(CrearUsuarioRequest crearUsuarioRequest) throws SameUserNameException {

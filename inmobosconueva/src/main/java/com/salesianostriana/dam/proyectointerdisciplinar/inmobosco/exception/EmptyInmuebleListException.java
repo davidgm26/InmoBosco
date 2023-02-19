@@ -5,7 +5,7 @@ import javax.persistence.EntityNotFoundException;
 public class EmptyInmuebleListException extends EntityNotFoundException {
 
     public EmptyInmuebleListException(){
-        super("No hay inmuebles disponibles");
+        super("No se han encontrado inmuebles");
     }
 
 }
