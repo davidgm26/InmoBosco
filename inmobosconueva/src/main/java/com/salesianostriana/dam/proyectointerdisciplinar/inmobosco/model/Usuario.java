@@ -70,7 +70,7 @@ public class Usuario implements UserDetails {
 
     private String email;
 
-    @OneToMany(mappedBy = "propietario",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "propietario",fetch = FetchType.LAZY)
     private List<Inmueble> propiedades = new ArrayList<>();
 
     @ManyToMany

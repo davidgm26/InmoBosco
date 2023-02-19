@@ -25,7 +25,7 @@ public class InmuebleController {
     private final InmuebleService inmuebleService;
 
     @GetMapping("/")
-    public Page<InmuebleResponse> listarTodosLosInmuebles(@RequestParam(value = "search", required = false) String search,
+    public Page<InmuebleResponse> listarTodosLosInmuebles(@RequestParam(value = "search",defaultValue = "") String search,
                                                           @PageableDefault(size = 20, page = 0) Pageable pageable) {
 
         List<SearchCriteria> params = SearchCriteriaExtractor.extractSearchCriteriaList(search);

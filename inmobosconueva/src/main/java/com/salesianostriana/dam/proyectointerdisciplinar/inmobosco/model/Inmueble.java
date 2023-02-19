@@ -29,7 +29,7 @@ public class Inmueble {
     @ElementCollection(targetClass=String.class)
     private List<String> img = new ArrayList<>();
 
-    @OneToOne(fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tipo_id")
     private Tipo tipoInmueble;
 

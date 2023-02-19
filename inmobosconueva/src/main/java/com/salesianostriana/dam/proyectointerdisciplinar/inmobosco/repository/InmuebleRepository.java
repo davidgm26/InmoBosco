@@ -30,7 +30,7 @@ public interface InmuebleRepository extends JpaRepository<Inmueble, Long>, JpaSp
                 select new com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto.InmuebleResponse(
                     t.tipoInmueble,i.descripcion,i.precio,i.ubicacion,i.metrosCuadrados)
                 from Inmueble i LEFT JOIN i.tipoInmueble t
-                where id = :id
+                where i.id = :id
                 """
     )
     InmuebleResponse nuevoDto(Long id);
