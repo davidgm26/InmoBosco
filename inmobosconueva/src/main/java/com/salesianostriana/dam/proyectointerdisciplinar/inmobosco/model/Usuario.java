@@ -49,7 +49,7 @@ public class Usuario implements UserDetails {
 
     private String password;
 
-    @ElementCollection(fetch = FetchType.LAZY)
+    @ElementCollection(fetch = FetchType.EAGER)
     private Set<UserRole> roles;
 
     private String username;
@@ -70,7 +70,7 @@ public class Usuario implements UserDetails {
 
     private String email;
 
-    @OneToMany(mappedBy = "propietario")
+    @OneToMany(mappedBy = "propietario",fetch = FetchType.EAGER)
     private List<Inmueble> propiedades = new ArrayList<>();
 
     @ManyToMany

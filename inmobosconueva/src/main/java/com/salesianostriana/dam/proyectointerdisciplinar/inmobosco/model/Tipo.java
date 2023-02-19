@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Builder
-
 public class Tipo {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -21,9 +20,6 @@ public class Tipo {
 
     @OneToOne(mappedBy = "tipoInmueble")
     private Inmueble inmueble;
-
-
-
 
 
 }
