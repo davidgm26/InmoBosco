@@ -4,9 +4,7 @@ package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.controller;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.Inmueble;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.service.InmuebleService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +19,7 @@ public class InmuebleController {
     public List<Inmueble> listarTodasLasProperties() {
         return inmuebleService.findAll();
     }
+
 
 
 
