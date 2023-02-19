@@ -4,19 +4,16 @@ import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto.InmuebleR
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.exception.EmptyInmuebleListException;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.Inmueble;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.InmuebleRepository;
-import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.search.spec.GenericSpecificationBuilder;
-import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.search.util.SearchCriteria;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.search.spec.GenericSpecificationBuilder;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.search.util.SearchCriteria;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import java.util.Iterator;
 import java.util.List;
-import java.util.function.Function;
 
 
 @Service

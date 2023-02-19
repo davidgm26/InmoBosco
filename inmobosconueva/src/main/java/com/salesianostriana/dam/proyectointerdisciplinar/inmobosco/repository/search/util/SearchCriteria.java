@@ -1,4 +1,4 @@
-package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.search.util;
+package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.search.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

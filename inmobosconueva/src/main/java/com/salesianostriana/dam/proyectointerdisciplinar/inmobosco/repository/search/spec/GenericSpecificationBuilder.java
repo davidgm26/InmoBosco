@@ -1,6 +1,6 @@
-package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.search.spec;
+package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.search.spec;
 
-import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.search.util.SearchCriteria;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.search.util.SearchCriteria;
 import org.springframework.data.jpa.domain.Specification;
 
 import java.util.List;

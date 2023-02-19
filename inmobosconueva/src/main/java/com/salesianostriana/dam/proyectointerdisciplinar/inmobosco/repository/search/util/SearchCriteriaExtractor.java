@@ -1,6 +1,4 @@
-package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.search.util;
-
-import org.springframework.beans.factory.support.ManagedArray;
+package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.search.util;
 
 import java.util.ArrayList;
 import java.util.List;
