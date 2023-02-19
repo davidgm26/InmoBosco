@@ -2,6 +2,7 @@ package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.controller;
 
 
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto.*;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.exception.SameUserNameException;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.Usuario;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.security.jwt.access.JwtProvider;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.service.UsuarioService;
@@ -31,7 +32,7 @@ public class UserController {
 
 
     @PostMapping("/auth/register")
-    public ResponseEntity<CrearUsuarioResponse> crearUsuarioConRolUsuario(@RequestBody CrearUsuarioRequest crearUsuarioRequest) {
+    public ResponseEntity<CrearUsuarioResponse> crearUsuarioConRolUsuario(@RequestBody CrearUsuarioRequest crearUsuarioRequest) throws SameUserNameException {
 
         Usuario user = usuarioService.crearUsuarioUser(crearUsuarioRequest);
 
@@ -40,7 +41,7 @@ public class UserController {
     }
 
     @PostMapping("/auth/register/admin")
-    public ResponseEntity<CrearUsuarioResponse> createUserWithAdminRole(@RequestBody CrearUsuarioRequest crearUsuarioRequest) {
+    public ResponseEntity<CrearUsuarioResponse> createUserWithAdminRole(@RequestBody CrearUsuarioRequest crearUsuarioRequest) throws SameUserNameException {
         Usuario user = usuarioService.crearUsuarioAdmin(crearUsuarioRequest);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(CrearUsuarioResponse.fromUsuario(user));

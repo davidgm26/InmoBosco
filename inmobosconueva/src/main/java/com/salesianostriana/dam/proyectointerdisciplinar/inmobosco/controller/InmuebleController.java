@@ -45,6 +45,7 @@ public class InmuebleController {
 
 
 
+
 /*
     @PreAuthorize("@inmuebleService.findById(#id).orElse(new net.openwebinars.springboot.restjwt.note.model.Note()).author == authentication.principal.getId().toString()")
     @PutMapping("/{id}")

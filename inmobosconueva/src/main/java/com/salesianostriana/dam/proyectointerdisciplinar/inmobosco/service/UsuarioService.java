@@ -1,6 +1,7 @@
 package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.service;
 
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto.CrearUsuarioRequest;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.exception.SameUserNameException;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.UserRole;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.Usuario;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.UsuarioRepository;
@@ -23,29 +24,36 @@ public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
 
-    public Usuario crearUsuario(CrearUsuarioRequest createUserRequest, EnumSet<UserRole> roles) {
-        Usuario user = Usuario.builder()
-                .nombre(createUserRequest.getNombre())
-                .apellidos(createUserRequest.getApellidos())
-                .dni(createUserRequest.getDni())
-                .edad(createUserRequest.getEdad())
-                .email(createUserRequest.getEmail())
-                .avatar(createUserRequest.getAvatar())
-                .fechaNacimiento(createUserRequest.getFechaNacimiento())
-                .telefono(createUserRequest.getTelefono())
-                .password(passwordEncoder.encode(createUserRequest.getPassword()))
-                .username(createUserRequest.getUserName())
-                .fechaCreacion(LocalDate.now())
-                .roles(roles)
-                .build();
-        return usuarioRepository.save(user);
+    public Usuario crearUsuario(CrearUsuarioRequest createUserRequest, EnumSet<UserRole> roles) throws SameUserNameException {
+        if (usuarioRepository.findFirstByUsername(createUserRequest.getUserName()).isEmpty()){
+            Usuario user = Usuario.builder()
+                    .nombre(createUserRequest.getNombre())
+                    .apellidos(createUserRequest.getApellidos())
+                    .dni(createUserRequest.getDni())
+                    .edad(createUserRequest.getEdad())
+                    .email(createUserRequest.getEmail())
+                    .avatar(createUserRequest.getAvatar())
+                    .fechaNacimiento(createUserRequest.getFechaNacimiento())
+                    .telefono(createUserRequest.getTelefono())
+                    .password(passwordEncoder.encode(createUserRequest.getPassword()))
+                    .username(createUserRequest.getUserName())
+                    .fechaCreacion(LocalDate.now())
+                    .roles(roles)
+                    .build();
+            return usuarioRepository.save(user);
+        }else{
+            throw new SameUserNameException();
+        }
+
+
+
     }
 
-    public Usuario crearUsuarioUser(CrearUsuarioRequest crearUsuarioRequest) {
+    public Usuario crearUsuarioUser(CrearUsuarioRequest crearUsuarioRequest) throws SameUserNameException {
         return crearUsuario(crearUsuarioRequest, EnumSet.of(UserRole.USER));
     }
 
-    public Usuario crearUsuarioAdmin(CrearUsuarioRequest crearUsuarioRequest) {
+    public Usuario crearUsuarioAdmin(CrearUsuarioRequest crearUsuarioRequest) throws SameUserNameException {
         return crearUsuario(crearUsuarioRequest, EnumSet.of(UserRole.ADMIN));
     }
 
