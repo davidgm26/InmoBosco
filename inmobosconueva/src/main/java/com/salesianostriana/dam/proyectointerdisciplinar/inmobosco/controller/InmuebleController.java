@@ -4,6 +4,7 @@ package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.controller;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto.InmuebleRequest;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto.InmuebleResponse;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.Inmueble;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.Usuario;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.search.util.SearchCriteriaExtractor;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.service.InmuebleService;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.search.util.SearchCriteria;
@@ -24,10 +25,12 @@ public class InmuebleController {
     private final InmuebleService inmuebleService;
 
     @GetMapping("/")
-    public Page<InmuebleResponse> listarTodosLosInmuebles(@RequestParam(value = "search",defaultValue = "") String search,
+    public Page<InmuebleResponse> listarTodosLosInmuebles(@RequestParam(value = "search", defaultValue = "") String search,
                                                           @PageableDefault(size = 5, page = 0) Pageable pageable) {
+
         List<SearchCriteria> params = SearchCriteriaExtractor.extractSearchCriteriaList(search);
-        return inmuebleService.findAll(params,pageable);
+        return inmuebleService.findAll(params, pageable);
+
     }
 
 
@@ -42,14 +45,18 @@ public class InmuebleController {
 
     }
 
-    @PutMapping("/{id}")
-    public Inmueble editarUnInmueble(@PathVariable Long id, @RequestBody InmuebleRequest inmuebleRequest){
-        return inmuebleService.edit(inmuebleRequest,id);
+    @PostMapping("/")
+    public Inmueble crearInmueble(@RequestBody InmuebleRequest inmuebleRequest) {
+        return inmuebleService.crearInmueble(inmuebleRequest);
     }
 
+    @PutMapping("/{id}")
+    public Inmueble editarUnInmueble(@PathVariable Long id, @RequestBody InmuebleRequest inmuebleRequest) {
+        return inmuebleService.edit(inmuebleRequest, id);
+    }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?>delete(@PathVariable Long id){
+    public ResponseEntity<?> delete(@PathVariable Long id) {
         inmuebleService.delete(id);
         return ResponseEntity.noContent().build();
     }
@@ -57,10 +64,6 @@ public class InmuebleController {
 
 
 
-    /*
-    @PostMapping("/")
-    public
-*/
 
 
 

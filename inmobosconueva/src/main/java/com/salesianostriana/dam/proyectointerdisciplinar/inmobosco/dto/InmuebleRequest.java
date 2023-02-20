@@ -1,17 +1,18 @@
 package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.Inmueble;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.TipoRepository;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class InmuebleRequest {
-  private double precio;
 
+
+
+    private double precio;
     private String ubicacion;
     private double metrosCuadrados;
     private String provincia;

@@ -17,6 +17,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -58,6 +59,21 @@ public class InmuebleService {
         return inmuebleRepository.save(i);
     }
 
+    public Inmueble crearInmueble(InmuebleRequest inmuebleRequest) {
+
+        Inmueble i = Inmueble.builder()
+                .descripcion(inmuebleRequest.getDescripcion())
+                .metrosCuadrados(inmuebleRequest.getMetrosCuadrados())
+                .ubicacion(inmuebleRequest.getUbicacion())
+                .precio(inmuebleRequest.getPrecio())
+                .provincia(inmuebleRequest.getTipoInmueble())
+                .tipoInmueble(tipoRepository.findByName(inmuebleRequest.getTipoInmueble()))
+                .build();
+
+        return inmuebleRepository.save(i);
+    }
+
+
     public Inmueble edit(InmuebleRequest inmuebleRequest, Long id) {
         return inmuebleRepository.findById(id).map(inmueble -> {
                     inmueble.setPrecio(inmuebleRequest.getPrecio());
@@ -72,9 +88,14 @@ public class InmuebleService {
 
     }
 
-    public void delete(Long id) {
-        if (inmuebleRepository.existsById(id))
-            inmuebleRepository.deleteById(id);
+    public void delete(Long id) throws  InmuebleNotFoundException{
+    Optional<Inmueble> i = inmuebleRepository.findById(id);
+    if (i.isPresent()){
+        inmuebleRepository.deleteById(id);
+    }else{
+        throw new InmuebleNotFoundException(id);
+    }
+
     }
 
 

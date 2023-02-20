@@ -11,5 +11,5 @@ public interface TipoRepository extends JpaRepository<Tipo,Long> {
             from Tipo t 
             where t.tipoInmueble =:tipo
             """)
-    Tipo findByName(String tipo);
+     Tipo findByName(String tipo);
 }

@@ -32,7 +32,7 @@ public class UserController {
 
 
     @PostMapping("/auth/register")
-    public ResponseEntity<CrearUsuarioResponse> crearUsuarioConRolUsuario(@RequestBody CrearUsuarioRequest crearUsuarioRequest) {
+    public ResponseEntity<CrearUsuarioResponse> crearUsuarioConRolUsuario(@RequestBody CrearUsuarioRequest crearUsuarioRequest) throws SameUserNameException {
 
         Usuario user = usuarioService.crearUsuarioUser(crearUsuarioRequest);
 
