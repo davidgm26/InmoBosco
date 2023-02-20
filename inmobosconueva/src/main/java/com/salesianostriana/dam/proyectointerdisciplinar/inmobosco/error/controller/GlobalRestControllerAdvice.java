@@ -28,7 +28,7 @@ public class GlobalRestControllerAdvice extends ResponseEntityExceptionHandler {
         return buildApiError(exception, request, HttpStatus.NOT_FOUND);
     }
     @ExceptionHandler({SameUserNameException.class})
-    public ResponseEntity<?> handleSameUsernameException(EntityNotFoundException exception, WebRequest request) {
+    public ResponseEntity<?> handleSameUsernameException(SameUserNameException exception, WebRequest request) {
         return buildApiError(exception, request, HttpStatus.BAD_REQUEST);
     }
 

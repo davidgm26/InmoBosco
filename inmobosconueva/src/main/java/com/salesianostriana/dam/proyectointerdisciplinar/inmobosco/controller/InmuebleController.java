@@ -22,6 +22,7 @@ import java.util.List;
 @RequestMapping("/inmueble")
 public class InmuebleController {
 
+
     private final InmuebleService inmuebleService;
 
     @GetMapping("/")
@@ -60,10 +61,6 @@ public class InmuebleController {
         inmuebleService.delete(id);
         return ResponseEntity.noContent().build();
     }
-
-
-
-
 
 
 
