@@ -5,6 +5,7 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,11 +19,12 @@ public class Inmueble {
     @Id
     @GeneratedValue
     private Long id;
-    
+
     @ManyToOne
-    @JoinColumn(name = "propietario_id")
+    @JoinColumn(name = "propietario_id",foreignKey = @ForeignKey(name = "FK_INMUEBLE_USUARIO"))
     @CreatedBy
     private Usuario propietario;
+
 
     private double precio;
 
@@ -35,6 +37,7 @@ public class Inmueble {
     @JoinColumn(name = "tipo_id")
     private Tipo tipoInmueble;
 
+    @NotEmpty
     private String ubicacion;
 
     private double metrosCuadrados;
@@ -42,6 +45,11 @@ public class Inmueble {
     private String provincia;
 
     private String descripcion;
+
+    @ManyToMany(mappedBy = "inmueblesFav")
+    private List<Usuario>usuariosFav;
+
+
 
 }
 

@@ -66,15 +66,22 @@ public class Usuario implements UserDetails {
 
     private LocalDateTime lastPasswordChangeAt = LocalDateTime.now();
 
-
     private String telefono;
 
     private String email;
 
-    @OneToMany(mappedBy = "propietario")
+    //Preguntar:¿Porque esto?
+    //More than one row with the given identifier was found: 1,
+    @OneToMany(mappedBy = "propietario",fetch = FetchType.LAZY)
     private List<Inmueble> propiedades = new ArrayList<>();
 
-    @ElementCollection(targetClass=String.class)
+    @ManyToMany
+    @JoinTable(joinColumns = @JoinColumn(name = "propietario_id",
+            foreignKey = @ForeignKey(name = "FK_FAVORITOS_USUARIO")),
+            inverseJoinColumns = @JoinColumn(name = "inmbueble_id",
+                    foreignKey = @ForeignKey(name = "FK_FAVORITOS_INMUEBLE")),
+            name = "favoritos"
+    )
     private List<Inmueble> inmueblesFav = new ArrayList<>();
 
     @Builder.Default
@@ -128,4 +135,22 @@ public class Usuario implements UserDetails {
         return username;
     }
 
+    public void addInmueble(Inmueble i){
+        if(this.getInmueblesFav() == null)
+            this.setInmueblesFav(new ArrayList<>());
+        this.getInmueblesFav().add(i);
+
+        if(i.getUsuariosFav() == null)
+            i.setUsuariosFav(new ArrayList<>());
+        i.getUsuariosFav().add(this);
+    }
+
+    public void removeFav(Inmueble i){
+        i.getUsuariosFav().remove(this);
+        this.getInmueblesFav().remove(i);
+    }
+
+
 }
+
+
