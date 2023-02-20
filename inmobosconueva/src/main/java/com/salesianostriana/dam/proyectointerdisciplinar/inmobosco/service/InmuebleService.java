@@ -46,11 +46,9 @@ public class InmuebleService {
         return inmuebleRepository.findAll(spec,pageable);
     }
 
-
-
     public Page<InmuebleResponse>buscarTodosDeUnTipo(String tipo,Pageable pageable){
         Page<Inmueble> result = inmuebleRepository.todosDeUnTipoInmbueble(tipo,pageable);
-        Page<InmuebleResponse> inmuebleResponsePage= new PageImpl<>(result.stream().toList(),pageable,result.getTotalPages()).map(InmuebleResponse::fromInmueble);
+        Page<InmuebleResponse> inmuebleResponsePage = new PageImpl<>(result.stream().toList(),pageable,result.getTotalPages()).map(InmuebleResponse::fromInmueble);
         return inmuebleResponsePage;
     }
 
