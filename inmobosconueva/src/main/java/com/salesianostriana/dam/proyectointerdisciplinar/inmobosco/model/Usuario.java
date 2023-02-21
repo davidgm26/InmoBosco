@@ -27,7 +27,6 @@ import java.util.stream.Collectors;
 public class Usuario implements UserDetails {
 
     //En el DTO de respuesta tienes que devolver el rol
-
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(
@@ -69,10 +68,10 @@ public class Usuario implements UserDetails {
     private String telefono;
 
     private String email;
-
+    //Preguntar:¿Porque esto?
+    //More than one row with the given identifier was found: 1,
     @OneToMany(mappedBy = "propietario",fetch = FetchType.LAZY)
     private List<Inmueble> propiedades = new ArrayList<>();
-
     @ManyToMany
     @JoinTable(joinColumns = @JoinColumn(name = "propietario_id",
             foreignKey = @ForeignKey(name = "FK_FAVORITOS_USUARIO")),

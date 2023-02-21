@@ -15,6 +15,7 @@ import lombok.experimental.SuperBuilder;
 public class JwtUserResponse extends CrearUsuarioResponse{
 
     private String token;
+  //  private String role;
 
     public JwtUserResponse(CrearUsuarioResponse crearUsuarioResponse) {
         id = crearUsuarioResponse.getId();
@@ -22,6 +23,8 @@ public class JwtUserResponse extends CrearUsuarioResponse{
         apellido = crearUsuarioResponse.getApellido();
         avatar = crearUsuarioResponse.getAvatar();
         fechaCreacion = crearUsuarioResponse.getFechaCreacion();
+        userName = crearUsuarioResponse.getUserName();
+
     }
 
     public static JwtUserResponse of (Usuario user, String token) {

@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @SuperBuilder
 public class CrearUsuarioResponse {
 
-    protected String id,userName,avatar,nombre,apellido;
+    protected String id,userName,avatar,nombre,apellido,role;
 
     protected LocalDate fechaCreacion;
 
