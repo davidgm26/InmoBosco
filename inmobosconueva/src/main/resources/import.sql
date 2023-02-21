@@ -1,104 +1,88 @@
-INSERT INTO Tipo (id,tipo_inmueble) values (NEXTVAL('hibernate_sequence'),'Casa');
-INSERT INTO Tipo (id,tipo_inmueble) values (NEXTVAL('hibernate_sequence'),'Piso');
-INSERT INTO Tipo (id,tipo_inmueble) values (NEXTVAL('hibernate_sequence'),'Adosado');
+INSERT INTO Tipo (id,tipo_inmueble) values (1,'Casa');
+INSERT INTO Tipo (id,tipo_inmueble) values (2,'Piso');
+INSERT INTO Tipo (id,tipo_inmueble) values (3,'Adosado');
 
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (1, 89578, 3, 'Calle Larga 100', 110, 'Sevilla', 'Casa rural acogedora');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (2, 51737, 1, '40050 Stephen Pass', 65, 'Mizhuang', 'Poisn by local antifung/infect/inflamm drugs, assault, subs');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (3, 60230, 3, '067 Brentwood Road', 68, 'Longtian', 'Pre-existing type 1 diabetes, in pregnancy, second trimester');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (4, 31540, 1, '1 Corscot Terrace', 35, 'Luboń', 'Jumping or diving into unsp water causing oth injury, subs');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (5, 87105, 2, '801 Marcy Park', 44, 'Kukawa', 'Lateral disloc of proximal end of tibia, left knee, sequela');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (6, 53512, 1, '723 Bashford Trail', 38, 'Strizhi', 'Underdosing of smallpox vaccines, sequela');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (7, 48087, 1, '0 Leroy Center', 93, 'Carromeu', 'Person outside car inj in clsn w 2/3-whl mv in traf, subs');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (8, 95104, 1, '9221 Killdeer Park', 27, 'Dayr Mawās', 'Unspecified subluxation of left radial head');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (9, 52962, 1, '3 Laurel Center', 30, 'Santo Niño', 'Traum hemor left cerebrum w LOC of unsp duration, init');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (10, 95981, 1, '46 Holy Cross Pass', 33, 'Gaoyao', 'Corrosions of unspecified internal organs');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (11, 2964, 2, '5856 Hoffman Drive', 27, 'Niagara Falls', 'Nondisp fx of prox phalanx of l lit fngr, 7thD');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (12, 66656, 1, '886 Schurz Parkway', 62, 'Agraharam', 'Facial myokymia');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (13, 79968, 3, '277 Straubel Court', 32, 'Labangka Satu', 'Nondisp fx of capitate bone, left wrist, init for clos fx');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (14, 54026, 1, '2937 Bayside Point', 56, 'Hacıhüseynli', 'Unil femoral hernia, w obst, w/o gangrene, not spcf as recur');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (15, 46366, 3, '6002 Lake View Way', 98, 'San Carlos', 'Major osseous defect, ankle and foot');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (16, 4470, 3, '301 Lakewood Avenue', 81, 'Lezhë', 'Breast implant status');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (17, 77142, 3, '99 Gerald Point', 32, 'Sibreh', 'Corros first degree of unsp mult fngr, inc thumb, subs');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (18, 84185, 1, '0202 Fallview Drive', 94, 'Sanxianling', 'Athscl unsp type bypass of the extrm w gangrene, oth extrm');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (19, 29464, 3, '4283 Duke Drive', 96, 'Dolní Bojanovice', 'Subluxation of T12/L1 thoracic vertebra');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (20, 13465, 3, '90 Hauk Lane', 97, 'Timiryazevskiy', 'Unspecified urinary incontinence');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (21, 74859, 2, '6 Continental Circle', 41, 'Salimbalan', 'Other disorders of the eye following cataract surgery');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (22, 13720, 2, '46 5th Trail', 94, 'Pil’na', 'Lacerat intrinsic musc/fasc/tend l thm at wrs/hnd lv, init');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (23, 99509, 2, '4 Lotheville Pass', 76, 'Ōno-hara', 'Plasmodium falciparum malaria, unspecified');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (24, 18413, 3, '101 Park Meadow Crossing', 66, 'Le Havre', 'Toxic effect of nitrogen oxides, accidental, subs');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (25, 76137, 2, '6 Continental Drive', 13, 'Santa Cruz Balanyá', 'NIHSS score 35');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (26, 73801, 2, '7 Garrison Plaza', 88, 'Aldana', 'Unsp focal TBI w LOC >24 hr w ret consc lev, init');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (27, 81321, 3, '90 Warner Pass', 60, 'Adzopé', 'Toxic effect of hydrogen sulfide, accidental, sequela');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (28, 90459, 2, '995 Hoffman Park', 11, 'Genova', 'Toxic effect of rodenticides');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (29, 98860, 1, '582 Grover Road', 44, 'Kompóti', 'Schistosomiasis due to Schistosoma haematobium');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (30, 60603, 2, '3 Bluestem Way', 52, 'Pembroke', 'Traum rupture of palmar ligament of l rng fngr at MCP/IP jt');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (31, 71104, 1, '808 1st Court', 70, 'Västervik', 'Fracture of unspecified phalanx of right ring finger');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (32, 95391, 1, '39 Arapahoe Lane', 18, 'Narimanov', 'Unspecified dacryocystitis of right lacrimal passage');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (33, 19588, 2, '850 Scofield Trail', 26, 'Sibulan', 'Poisoning by angiotens-convert-enzyme inhibitors, acc');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (34, 61780, 3, '8809 Express Point', 82, 'Sihai', 'Pilonidal cyst and sinus with abscess');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (35, 48849, 2, '65 Ilene Avenue', 31, 'Panguna', 'Toxic effect of copper and its compounds, assault, subs');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (36, 84380, 2, '93802 Victoria Street', 65, 'Winterthur', 'Infct of amniotic sac and membrns, unsp, second tri, oth');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (37, 24198, 3, '94 Birchwood Trail', 89, 'Jiabeiyan', 'Hyphema, left eye');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (38, 25428, 1, '9 Kropf Lane', 36, 'Vsetín', 'Displaced fracture of third metatarsal bone, right foot');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (39, 30360, 3, '5 Memorial Hill', 24, 'Colomi', 'Unspecified Eustachian tube disorder, left ear');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (40, 32317, 1, '5 Schlimgen Crossing', 62, 'Yeping', 'Other spotted fevers');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (41, 43923, 1, '3415 Declaration Pass', 87, 'Natitingou', 'Drowning and submersion due to sailboat overturning');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (42, 78581, 1, '1092 Lotheville Plaza', 17, 'Raszczyce', 'Displaced associated transv/post fx left acetabulum, init');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (43, 13112, 1, '39891 Bluestem Street', 51, 'Surin', 'Nondisp fx of base of unsp MC bone, subs for fx w malunion');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (44, 79288, 1, '17 Esker Terrace', 21, 'Lumbayan', 'Unsp opn wnd abd wall, periumb rgn w/o penet perit cav, subs');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (45, 56222, 2, '238 Dwight Avenue', 23, 'Bakıxanov', 'Malig neoplasm of upper-inner quadrant of unsp female breast');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (46, 34631, 3, '6145 Mitchell Hill', 53, 'Zdice', 'Unsp injury of oth blood vessels at forearm level, unsp arm');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (47, 94904, 1, '9 Browning Pass', 15, 'Ji’an', 'Terrorism w chemical weapons, terrorist injured, sequela');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (48, 18164, 1, '5 Carpenter Court', 100, 'Boka', 'Driver injured in collision w oth mv nontraf, sequela');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (49, 16925, 3, '14 Lunder Terrace', 65, 'Chengkan', 'Open bite of right little finger w/o damage to nail, subs');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (50, 10577, 2, '50 Ludington Street', 88, 'Pérez', 'Laceration of anterior tibial artery, right leg');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (51, 14686, 2, '1786 Saint Paul Drive', 76, 'Ji’ergele Teguoleng', 'Hang-glider fire injuring occupant');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (52, 70813, 1, '1 Magdeline Drive', 49, 'Blagoveshchensk', 'Person injured wh brd/alit from dune buggy, sequela');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (53, 90738, 2, '51 West Road', 77, 'Limboto', 'Poisoning by cannabis (derivatives), self-harm, init');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (54, 57219, 1, '9 Forest Dale Court', 88, 'São Fidélis', 'Other X-linked adrenoleukodystrophy');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (55, 67572, 3, '89629 Center Court', 54, 'Kuala Belait', 'Other disorders of arteries and arterioles');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (56, 48801, 2, '6 Thackeray Center', 76, 'Daszewice', 'Crushing injury of foot');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (57, 31668, 1, '314 Carpenter Circle', 100, 'Zheleznodorozhnyy', 'Streptococcus B carrier state compl preg/chldbrth');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (58, 22480, 3, '3423 Talisman Junction', 13, 'Tralee', 'Poisoning by centr-acting/adren-neurn-block agnt, assault');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (59, 19853, 3, '775 Vahlen Court', 70, 'Nizhniy Lomov', 'Underdosing of penicillins, subsequent encounter');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (60, 55818, 3, '65352 Bayside Place', 27, 'Alexandria', 'Acute vaginitis');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (61, 97635, 1, '8880 Heath Road', 83, 'Tingloy', 'Prolapse and hernia of ovary and fallopian tube');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (62, 81622, 1, '7 Oak Trail', 33, 'Vilela', 'Pathological fracture in oth disease, right shoulder, init');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (63, 77868, 1, '55 Arrowood Trail', 18, 'Sirte', 'Burn first degree of single r finger except thumb, sqla');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (64, 54142, 3, '8 Grasskamp Road', 46, 'Jianguo', 'Cervical disc disorder with myelopathy, unsp cervical region');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (65, 56847, 3, '697 Shopko Junction', 20, 'San Diego', 'Contracture, unspecified knee');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (66, 42818, 3, '95165 Hollow Ridge Trail', 82, 'Mpraeso', 'Pnctr w/o fb of unsp frnt wl of thrx w/o penet thor cav,subs');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (67, 34680, 3, '341 Bonner Hill', 49, 'Nafada', 'Other specified injury of popliteal vein, right leg');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (68, 62627, 2, '723 Chinook Hill', 86, 'Tangwu', 'Poisoning by methadone, undetermined');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (69, 57557, 1, '88 Mariners Cove Street', 57, 'Lunao', 'Disp fx of fourth metatarsal bone, r foot, init for opn fx');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (70, 96830, 2, '81259 Dapin Drive', 57, 'Canedo', 'Immunization not carried out because of patient refusal');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (71, 27076, 3, '5 Tennessee Way', 96, 'Buenavista', 'Displaced avulsion fx tuberosity of r calcaneus, init');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (72, 17145, 2, '13052 Warner Trail', 44, 'Itsandzéni', 'Crushing injury of unspecified knee');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (73, 29925, 2, '5026 Spenser Terrace', 75, 'Valuyki', 'Person injured wh brd/alit from streetcar, sequela');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (74, 31959, 3, '4 Spaight Trail', 52, 'Sedlarevo', 'Burn of unspecified degree of right knee');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (75, 38884, 3, '39 Union Point', 38, 'Jardín América', 'Occup of special agricultural vehicle injured nontraf, subs');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (76, 2796, 2, '79483 Michigan Terrace', 81, 'Solna', 'Other injury of other part of small intestine');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (77, 47809, 1, '3 Commercial Place', 46, 'Budta', 'Inj oth flexor musc/fasc/tend at forarm lv, right arm, sqla');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (78, 8436, 2, '85 Oneill Alley', 93, 'Liujiagou', 'Pnctr w foreign body of r rng fngr w/o damage to nail, init');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (79, 90599, 3, '2032 Brentwood Court', 91, 'Leye', 'Car driver injured in collision w rail trn/veh in traf, init');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (80, 46954, 3, '2263 7th Way', 61, 'Longcheng', 'Adverse effect of other hormone antagonists');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (81, 80779, 3, '93 Spaight Plaza', 85, 'Watunggong', 'Oth physeal fracture of lower end of right tibia, init');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (82, 40147, 3, '9076 Bonner Junction', 59, 'Misasi', 'Displ transverse fx shaft of humer, unsp arm, 7thK');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (83, 50653, 3, '3585 Manitowish Road', 36, 'Umanday Centro', 'Strain of extensor musc/fasc/tend r idx fngr at wrs/hnd lv');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (84, 39250, 1, '431 Kedzie Hill', 79, 'La Rochelle', 'Poisoning by antidiarrheal drugs, undetermined, subs encntr');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (85, 42981, 2, '0 Farragut Center', 15, 'Maubara', 'Gout due to renal impairment');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (86, 90028, 3, '906 Hauk Hill', 83, 'Renhe', 'Driver of hv veh injured in clsn w pedl cyc nontraf, init');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (87, 4197, 1, '582 Hudson Way', 88, 'Vodstroy', 'Disp fx of trapezoid, unsp wrist, subs for fx w routn heal');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (88, 3654, 3, '3 Dunning Trail', 99, 'Slavuta', 'Acute kidney failure');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (89, 24482, 3, '2542 Daystar Junction', 75, 'Murici', 'Burn first deg mult sites of right lower limb, except ank/ft');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (90, 63595, 1, '159 Evergreen Plaza', 39, 'Vila Nova de Gaia', 'Pathological fracture, right radius, sequela');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (91, 58344, 1, '69540 Bellgrove Park', 68, 'Vinkkilä', 'Burn of unsp deg mult sites of left ankle and foot, subs');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (92, 36662, 2, '0 Sutteridge Crossing', 93, 'Melbourne', 'Displ assoc transv/post fx r acetab, 7thG');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (93, 79766, 1, '11850 Helena Pass', 75, 'Boston', 'Neoplasm of uncertain behavior of unsp endocrine gland');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (94, 13471, 1, '29 Messerschmidt Drive', 36, 'Mutengene', 'Unsp inj msl/tnd lng flxr msl toe at ank/ft lev, l ft, subs');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (95, 29776, 3, '2240 Buhler Crossing', 77, 'Talisay', 'Traumatic rupture of thoracic intervertebral disc, subs');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (96, 72958, 2, '1194 Brown Place', 55, 'Essen', 'Corros unsp degree of unsp single finger except thumb, init');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (97, 54369, 2, '2 Anthes Place', 14, 'El Paso', 'Unsp inj flexor musc/fasc/tend finger at wrs/hnd lv, sequela');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (98, 69185, 2, '77 Aberg Way', 83, 'Maayong Tubig', 'Malignant neoplasm of epididymis');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (99, 98555, 2, '23 Lillian Parkway', 49, 'Tsévié', 'Nondisp fx of 4th metatarsal bone, unsp ft, 7thD');
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (100, 17536, 3, '365 Onsgard Hill', 23, 'Santa Rita', 'Vibratory urticaria');
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (1, 125000.00, 1, 'Triana', 80.50, 'Sevilla', 'Apartamento reformado con vistas al río. Cocina americana con electrodomésticos. Suelos de tarima. Totalmente amueblado. Zona muy tranquila.', 1, 2);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (2, 240000.00, 2, 'Los Remedios', 120.00, 'Sevilla', 'Piso muy luminoso, 3 habitaciones y 2 baños. Cocina amueblada. Suelos de mármol. Garaje y trastero incluidos. Zona residencial tranquila.', 2, 3);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (3, 340000.00, 3, 'El Porvenir', 180.00, 'Sevilla', 'Ático de lujo con terraza y vistas a la ciudad. 4 habitaciones y 3 baños. Cocina completamente equipada. Suelos de madera. Aire acondicionado centralizado. Zona céntrica y bien comunicada.', 3, 4);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (4, 180000.00, 1, 'San Bernardo', 90.00, 'Sevilla', 'Acogedor apartamento en zona céntrica. Totalmente reformado y amueblado. 1 habitación y 1 baño. Suelos de tarima. Aire acondicionado y calefacción.', 1, 1);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (5, 295000.00, 2, 'Nervión', 140.00, 'Sevilla', 'Piso amplio y luminoso con balcón. 3 habitaciones y 2 baños. Cocina amueblada. Suelos de terrazo. Aire acondicionado centralizado. Zona comercial y bien comunicada.', 2, 3);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (6, 475000.00, 3, 'La Palmera', 220.00, 'Sevilla', 'Chalet adosado con jardín y piscina privados. 4 habitaciones y 3 baños. Cocina completamente equipada. Suelos de mármol. Aire acondicionado y calefacción. Garaje para dos coches. Zona residencial exclusiva.', 3, 4);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (7, 210000.00, 2, 'Triana', 100.00, 'Sevilla', 'Piso reformado con acabados de calidad. 2 habitaciones y 1 baño. Cocina amueblada. Suelos de mármol. Aire acondicionado y calefacción. Zona muy demandada.', 1, 2);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (8, 285000.00, 3, 'El Porvenir', 150.00, 'Sevilla', 'Ático con terraza privada y vistas panorámicas. 3 habitaciones y 2 baños. Cocina amueblada. Suelos de madera. Aire acondicionado centralizado. Zona céntrica y bien comunicada.', 2, 3);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (9, 325000.00, 3, 'Los Remedios', 170.00, 'Sevilla', 'Piso de lujo con vistas al río. 4 habitaciones y 3 baños. Cocina completamente equipada. Suelos de mármol. Aire acondicionado y calefacción. Plaza de garaje incluida. Zona exclusiva.', 3, 4);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (10, 150000.00, 1, 'San Bernardo', 70.00, 'Sevilla', 'Apartamento con mucha luz natural. 1 habitación y 1 baño. Cocina amueblada. Suelos de terrazo. Aire acondicionado. Zona muy bien comunicada.', 1, 1);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (11, 270000.00, 2, 'Nervión', 130.00, 'Sevilla', 'Piso de diseño con acabados de calidad. 3 habitaciones y 2 baños. Cocina amueblada. Suelos de madera. Aire acondicionado centralizado. Zona comercial y bien comunicada.', 2, 3);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (12, 460000.00, 3, 'La Palmera', 210.00, 'Sevilla', 'Chalet independiente con jardín y piscina privados. 4 habitaciones y 3 baños. Cocina completamente equipada. Suelos de mármol. Aire acondicionado y calefacción. Garaje para dos coches. Zona residencial exclusiva.', 3, 4);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (13, 200000.00, 1, 'Macarena', 90.00, 'Sevilla', 'Apartamento con terraza y vistas a la Giralda. 2 habitaciones y 1 baño. Cocina amueblada. Suelos de terrazo. Aire acondicionado. Zona muy céntrica.', 1, 2);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (14, 390000.00, 3, 'Los Bermejales', 180.00, 'Sevilla', 'Chalet adosado con jardín privado. 4 habitaciones y 3 baños. Cocina amueblada. Suelos de mármol. Aire acondicionado y calefacción. Garaje para dos coches. Zona residencial tranquila.', 3, 4);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (15, 155000.00, 1, 'El Porvenir', 75.00, 'Sevilla', 'Apartamento con mucha luz natural. 1 habitación y 1 baño. Cocina amueblada. Suelos de terrazo. Aire acondicionado. Zona céntrica y bien comunicada.', 1, 1);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (16, 310000.00, 2, 'Triana', 140.00, 'Sevilla', 'Piso reformado con acabados de calidad. 3 habitaciones y 2 baños. Cocina amueblada. Suelos de mármol. Aire acondicionado centralizado. Zona muy demandada.', 2, 3);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (17, 245000.00, 2, 'Nervión', 120.00, 'Sevilla', 'Piso con terraza privada. 2 habitaciones y 1 baño. Cocina amueblada. Suelos de mármol. Aire acondicionado y calefacción. Zona céntrica y bien comunicada.', 1, 2);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (18, 280000.00, 2, 'Triana', 130.00, 'Sevilla', 'Piso reformado con acabados de calidad. 3 habitaciones y 2 baños. Cocina amueblada. Suelos de mármol. Aire acondicionado centralizado. Zona muy demandada.', 2, 3);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (19, 135000.00, 1, 'Macarena', 70.00, 'Sevilla', 'Apartamento para reformar. 1 habitación y 1 baño. Cocina sin amueblar. Suelos de terrazo. Zona muy céntrica y con servicios.', 1, 1);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (20, 500000.00, 3, 'Los Remedios', 250.00, 'Sevilla', 'Chalet independiente con jardín y piscina privados. 5 habitaciones y 4 baños. Cocina amueblada. Suelos de mármol. Aire acondicionado y calefacción centralizados. Garaje para varios coches. Zona residencial tranquila.', 4, 5);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (21, 200000.00, 2, 'Benalmádena', 100.00, 'Málaga', 'Piso de 2 habitaciones y 2 baños. Cocina amueblada. Suelos de mármol. Zona tranquila y bien comunicada.', 2, 2);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (22, 600000.00, 3, 'Marbella', 300.00, 'Málaga', 'Villa de lujo con vistas al mar. 4 habitaciones y 3 baños. Cocina totalmente equipada. Suelos de madera. Aire acondicionado y calefacción centralizados. Piscina y jardín privados. Zona exclusiva.', 3, 4);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (23, 280000.00, 2, 'Fuengirola', 120.00, 'Málaga', 'Piso de 3 habitaciones y 2 baños. Cocina amueblada. Suelos de parquet. Muy cerca de la playa.', 2, 3);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (24, 450000.00, 3, 'Benahavís', 200.00, 'Málaga', 'Chalet adosado en urbanización privada. 4 habitaciones y 3 baños. Cocina amueblada. Suelos de mármol. Aire acondicionado y calefacción centralizados. Piscina comunitaria. Zona tranquila.', 3, 4);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (25, 120000.00, 1, 'Málaga Centro', 50.00, 'Málaga', 'Apartamento reformado de 1 habitación y 1 baño. Cocina amueblada. Suelos de tarima. Aire acondicionado. Zona céntrica y bien comunicada.', 1, 1);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (26, 78000.00, 1, 'Estepona', 40.00, 'Málaga', 'Estudio en primera línea de playa. 1 baño. Cocina sin amueblar. Suelos de terrazo. Zona con servicios y muy turística.', 1, 0);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (27, 89000.00, 1, 'Torremolinos', 45.00, 'Málaga', 'Estudio reformado de 1 baño. Cocina amueblada. Suelos de tarima. Aire acondicionado. Zona turística y bien comunicada.', 1, 0);
+
+INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)
+VALUES (28, 550000.00, 3, 'Mijas', 300.00, 'Málaga', 'Chalet independiente con jardín y piscina privados. 5 habitaciones y 4 baños. Cocina amueblada. Suelos de mármol. Aire acondicionado y calefacción centralizados. Garaje para varios coches. Zona residencial tranquila.', 4, 5);
+

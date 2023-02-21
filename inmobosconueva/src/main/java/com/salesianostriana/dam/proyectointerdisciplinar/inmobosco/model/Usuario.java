@@ -1,7 +1,7 @@
 package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model;
 
 
-import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.EnumSetUserRoleConverter;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.others.EnumSetUserRoleConverter;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;

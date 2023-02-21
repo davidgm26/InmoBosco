@@ -19,7 +19,7 @@ public interface InmuebleRepository extends JpaRepository<Inmueble, Long>, JpaSp
 
     @Query("""
                 select new com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto.InmuebleResponse(
-                    t.tipoInmueble,i.descripcion,i.precio,i.ubicacion,i.metrosCuadrados)
+                    t.tipoInmueble,i.descripcion,i.precio,i.ubicacion,i.metrosCuadrados,i.numHab,i.numBanios)
                 from Inmueble i LEFT JOIN i.tipoInmueble t
                 where i.id = :id
                 """

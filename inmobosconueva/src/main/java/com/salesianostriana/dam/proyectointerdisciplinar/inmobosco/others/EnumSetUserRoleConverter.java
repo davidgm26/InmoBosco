@@ -1,4 +1,4 @@
-package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco;
+package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.others;
 
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.UserRole;
 
