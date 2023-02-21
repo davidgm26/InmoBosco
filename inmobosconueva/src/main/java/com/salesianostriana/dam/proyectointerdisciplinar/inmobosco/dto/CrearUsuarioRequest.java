@@ -1,6 +1,7 @@
 package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto;
 
 
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.validation.annotation.PasswordsMatch;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,6 +15,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@PasswordsMatch(passwordField = "password", verifyPasswordField = "passwordRepeat" ,message = "")
 public class CrearUsuarioRequest {
 
     private String nombre;
@@ -21,6 +23,8 @@ public class CrearUsuarioRequest {
     private String apellidos;
 
     private String password;
+
+    private String passwordRepeat;
 
     private String userName;
 

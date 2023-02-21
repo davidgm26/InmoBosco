@@ -17,6 +17,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
@@ -29,7 +30,7 @@ public class UserController {
 
 
     @PostMapping("/auth/register")
-    public ResponseEntity<CrearUsuarioResponse> crearUsuarioConRolUsuario(@RequestBody CrearUsuarioRequest crearUsuarioRequest) throws SameUserNameException {
+    public ResponseEntity<CrearUsuarioResponse> crearUsuarioConRolUsuario(@Valid @RequestBody CrearUsuarioRequest crearUsuarioRequest) throws SameUserNameException {
 
         Usuario user = usuarioService.crearUsuarioUser(crearUsuarioRequest);
 
