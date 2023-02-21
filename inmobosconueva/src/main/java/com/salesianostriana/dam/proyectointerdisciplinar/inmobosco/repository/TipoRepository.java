@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 public interface TipoRepository extends JpaRepository<Tipo,Long> {
 
 
-    Tipo findFirstBytipoInmueble(String tipo);
+    Tipo findFirstBytipoInmuebleContains(String tipo);
 /*
     @Query("""
             SELECT t

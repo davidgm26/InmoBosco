@@ -79,11 +79,11 @@ public class InmuebleService {
     //El tipo se asigna null
 
     public Inmueble edit(InmuebleRequest inmuebleRequest, Long id) {
-        String Tipo = tipoRepository.findFirstBytipoInmueble(inmuebleRequest.getTipoInmueble()).toString();
+        String Tipo = tipoRepository.findFirstBytipoInmuebleContains(inmuebleRequest.getTipoInmueble()).toString();
         return inmuebleRepository.findById(id).map(inmueble -> {
                     inmueble.setPrecio(inmuebleRequest.getPrecio());
                    // inmueble.setTipoInmueble(tipoRepository.findByName(inmuebleRequest.getTipoInmueble()));
-                    inmueble.setTipoInmueble(tipoRepository.findFirstBytipoInmueble(inmuebleRequest.getTipoInmueble()));
+                    inmueble.setTipoInmueble(tipoRepository.findFirstBytipoInmuebleContains(inmuebleRequest.getTipoInmueble()));
                     inmueble.setProvincia(inmuebleRequest.getProvincia());
                     inmueble.setUbicacion(inmuebleRequest.getUbicacion());
                     inmueble.setDescripcion(inmuebleRequest.getDescripcion());
