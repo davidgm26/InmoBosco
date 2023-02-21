@@ -60,7 +60,7 @@ public class JwtProvider {
                         LocalDateTime
                                 .now()
                                 //.plusMinutes(jwtLifeInMinutes)
-                                .plusHours(jwtLifeInMinutes)
+                                .plusDays(jwtLifeInMinutes)
                                 .atZone(ZoneId.systemDefault())
                                 .toInstant()
                 );
