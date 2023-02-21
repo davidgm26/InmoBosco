@@ -18,5 +18,7 @@ public class InmuebleRequest {
     private String provincia;
     private String descripcion;
     private String tipoInmueble;
+    private int numBanios;
+    private int numHab;
 
 }

@@ -17,6 +17,8 @@ public class InmuebleResponse {
     protected double precio;
     protected String ubicacion;
     protected double metrosCuadrados;
+    protected int numBanios;
+    protected int numHab;
 
 
     public static InmuebleResponse fromInmueble(Inmueble inmueble){
@@ -26,6 +28,8 @@ public class InmuebleResponse {
                 .ubicacion(inmueble.getUbicacion())
                 .precio(inmueble.getPrecio())
                 .metrosCuadrados(inmueble.getMetrosCuadrados())
+                .numHab(inmueble.getNumHab())
+                .numBanios(inmueble.getNumBanios())
                 .build();
     }
 }

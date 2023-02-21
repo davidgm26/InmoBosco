@@ -48,6 +48,10 @@ public class Inmueble {
     @ManyToMany(mappedBy = "inmueblesFav")
     private List<Usuario>usuariosFav;
 
+    private int numHab;
+
+    private int numBanios;
+
 
 
 }

@@ -2,7 +2,7 @@ INSERT INTO Tipo (id,tipo_inmueble) values (NEXTVAL('hibernate_sequence'),'Casa'
 INSERT INTO Tipo (id,tipo_inmueble) values (NEXTVAL('hibernate_sequence'),'Piso');
 INSERT INTO Tipo (id,tipo_inmueble) values (NEXTVAL('hibernate_sequence'),'Adosado');
 
-insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (1, 89578, 3, '59 Badeau Junction', 11, 'Ocoruro', 'Cerebral infrc due to unsp occls or stenosis of basilar art');
+insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (1, 89578, 3, 'Calle Larga 100', 110, 'Sevilla', 'Casa rural acogedora');
 insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (2, 51737, 1, '40050 Stephen Pass', 65, 'Mizhuang', 'Poisn by local antifung/infect/inflamm drugs, assault, subs');
 insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (3, 60230, 3, '067 Brentwood Road', 68, 'Longtian', 'Pre-existing type 1 diabetes, in pregnancy, second trimester');
 insert into Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion) values (4, 31540, 1, '1 Corscot Terrace', 35, 'Luboń', 'Jumping or diving into unsp water causing oth injury, subs');
