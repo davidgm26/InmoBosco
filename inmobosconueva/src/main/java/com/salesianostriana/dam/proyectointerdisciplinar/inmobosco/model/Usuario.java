@@ -1,6 +1,7 @@
 package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model;
 
 
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.EnumSetUserRoleConverter;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
@@ -48,8 +49,8 @@ public class Usuario implements UserDetails {
 
     private String password;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    private Set<UserRole> roles;
+    @Convert(converter = EnumSetUserRoleConverter.class)
+    private EnumSet<UserRole> roles;
 
     private String username;
 
@@ -68,6 +69,7 @@ public class Usuario implements UserDetails {
     private String telefono;
 
     private String email;
+
     //Preguntar:¿Porque esto?
     //More than one row with the given identifier was found: 1,
     @OneToMany(mappedBy = "propietario",fetch = FetchType.LAZY)

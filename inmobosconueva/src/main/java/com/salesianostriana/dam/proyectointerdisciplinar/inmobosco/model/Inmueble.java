@@ -28,10 +28,9 @@ public class Inmueble {
 
     private double precio;
 
-    @Column
     // libreria Vlad mihalcea hypersistence-utils
-    @ElementCollection(targetClass=String.class)
-    private List<String> img = new ArrayList<>();
+    //@ElementCollection(targetClass=String.class)
+    private String img;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tipo_id")
