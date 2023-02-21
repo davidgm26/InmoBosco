@@ -14,10 +14,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Optional;
@@ -81,5 +78,10 @@ public class UserController {
         }
 
         return null;
+    }
+
+    @GetMapping("/me")
+    public CrearUsuarioResponse profile(@AuthenticationPrincipal Usuario loggedUser){
+        return CrearUsuarioResponse.fromUsuario(loggedUser);
     }
 }
