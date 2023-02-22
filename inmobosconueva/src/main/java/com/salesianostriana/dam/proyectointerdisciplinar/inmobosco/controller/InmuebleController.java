@@ -52,7 +52,7 @@ public class InmuebleController {
     }
 
     @PutMapping("/{id}")
-    public Inmueble editarUnInmueble(@PathVariable Long id, @RequestBody InmuebleRequest inmuebleRequest) {
+    public InmuebleResponse editarUnInmueble(@PathVariable Long id, @RequestBody InmuebleRequest inmuebleRequest) {
         return inmuebleService.edit(inmuebleRequest, id);
     }
 

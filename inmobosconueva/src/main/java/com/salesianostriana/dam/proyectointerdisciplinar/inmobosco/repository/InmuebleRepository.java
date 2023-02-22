@@ -27,7 +27,7 @@ public interface InmuebleRepository extends JpaRepository<Inmueble, Long>, JpaSp
     InmuebleResponse nuevoDto(Long id);
 
     @Query("""
-            select i 
+            select i
             from Inmueble i JOIN Tipo t ON (i.tipoInmueble = t.id)
             where t.tipoInmueble =:tipo
             """)

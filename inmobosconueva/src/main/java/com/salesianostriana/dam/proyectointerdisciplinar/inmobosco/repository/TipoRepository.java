@@ -7,7 +7,9 @@ import org.springframework.data.jpa.repository.Query;
 public interface TipoRepository extends JpaRepository<Tipo,Long> {
 
 
-    Tipo findFirstByTipoInmuebleContains(String tipo);
+    Tipo findFirstBytipoInmuebleContainsIgnoreCase(String tipoInmueble);
+
+
 /*
     @Query("""
             SELECT t
@@ -15,7 +17,7 @@ public interface TipoRepository extends JpaRepository<Tipo,Long> {
             where t.tipoInmueble =:tipo
             """)
      Tipo findByName(String tipo);
-*/
+    */
 
 }
 

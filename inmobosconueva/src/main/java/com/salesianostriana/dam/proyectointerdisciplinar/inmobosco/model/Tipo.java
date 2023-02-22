@@ -18,7 +18,7 @@ public class Tipo {
 
     private String tipoInmueble;
 
-    @OneToOne(mappedBy = "tipoInmueble")
+    @OneToOne(mappedBy = "tipoInmueble",fetch = FetchType.LAZY)
     private Inmueble inmueble;
 
 

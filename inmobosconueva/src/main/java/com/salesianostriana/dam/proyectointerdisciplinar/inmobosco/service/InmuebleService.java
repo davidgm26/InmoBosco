@@ -5,6 +5,7 @@ import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto.InmuebleR
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.exception.EmptyInmuebleListException;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.exception.InmuebleNotFoundException;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.Inmueble;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.Tipo;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.InmuebleRepository;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.TipoRepository;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.search.spec.GenericSpecificationBuilder;
@@ -48,17 +49,17 @@ public class InmuebleService {
                 .orElseThrow(() -> new InmuebleNotFoundException(id));
     }
 
-    public Page<Inmueble> search(List<SearchCriteria>params, Pageable pageable){
+    public Page<Inmueble> search(List<SearchCriteria> params, Pageable pageable) {
         GenericSpecificationBuilder<Inmueble> inmuebleGenericSpecificationBuilder =
                 new GenericSpecificationBuilder<>(params);
 
         Specification<Inmueble> spec = inmuebleGenericSpecificationBuilder.build();
-        return inmuebleRepository.findAll(spec,pageable);
+        return inmuebleRepository.findAll(spec, pageable);
     }
 
-    public Page<InmuebleResponse>buscarTodosDeUnTipo(String tipo,Pageable pageable){
-        Page<Inmueble> result = inmuebleRepository.todosDeUnTipoInmbueble(tipo,pageable);
-        Page<InmuebleResponse> inmuebleResponsePage = new PageImpl<>(result.stream().toList(),pageable,result.getTotalPages()).map(InmuebleResponse::fromInmueble);
+    public Page<InmuebleResponse> buscarTodosDeUnTipo(String tipo, Pageable pageable) {
+        Page<Inmueble> result = inmuebleRepository.todosDeUnTipoInmbueble(tipo, pageable);
+        Page<InmuebleResponse> inmuebleResponsePage = new PageImpl<>(result.stream().toList(), pageable, result.getTotalPages()).map(InmuebleResponse::fromInmueble);
         return inmuebleResponsePage;
     }
 
@@ -78,31 +79,51 @@ public class InmuebleService {
 
     //El tipo se asigna null
 
-    public Inmueble edit(InmuebleRequest inmuebleRequest, Long id) {
-        String tipo = tipoRepository.findFirstByTipoInmuebleContains(inmuebleRequest.getTipoInmueble()).toString();
-        return inmuebleRepository.findById(id).map(inmueble -> {
-                    inmueble.setPrecio(inmuebleRequest.getPrecio());
-                   // inmueble.setTipoInmueble(tipoRepository.findByName(inmuebleRequest.getTipoInmueble()));
-                    inmueble.setTipoInmueble(tipoRepository.findFirstByTipoInmuebleContains(inmuebleRequest.getTipoInmueble()));
-                    inmueble.setProvincia(inmuebleRequest.getProvincia());
-                    inmueble.setUbicacion(inmuebleRequest.getUbicacion());
-                    inmueble.setDescripcion(inmuebleRequest.getDescripcion());
-                    inmueble.setMetrosCuadrados(inmuebleRequest.getMetrosCuadrados());
-                    return inmuebleRepository.save(inmueble);
-                })
-                .orElseThrow(() -> new InmuebleNotFoundException(id));
+    public InmuebleResponse edit(InmuebleRequest inmuebleRequest, Long id) {
+        /*
+        List<Tipo>morite = tipoRepository.findAll();
+        morite.forEach(tipo -> System.out.println(tipo.getTipoInmueble()));
+        */
+        //String tipo = tipoRepository.findByName(inmuebleRequest.getTipoInmueble()).toString();
+         Inmueble i = inmuebleRepository.findById(id).map(inmueble -> {
+            inmueble.setPrecio(inmuebleRequest.getPrecio());
+            //inmueble.setTipoInmueble(tipoRepository.findFirstBytipoInmuebleContainsIgnoreCase(inmuebleRequest.getTipoInmueble()));
+            //inmueble.setTipoInmueble(tipoRepository.findByName(inmuebleRequest.getTipoInmueble()));
+            //inmueble.setTipoInmueble(tipoRepository.findFirstBytipoInmuebleContainsIgnoreCase(inmuebleRequest.getTipoInmueble()));
+            //inmueble.setTipoInmueble(buscarTipo(inmuebleRequest.getTipoInmueble()));
+            inmueble.setProvincia(inmuebleRequest.getProvincia());
+            inmueble.setUbicacion(inmuebleRequest.getUbicacion());
+            inmueble.setDescripcion(inmuebleRequest.getDescripcion());
+            inmueble.setMetrosCuadrados(inmuebleRequest.getMetrosCuadrados());
+            return inmuebleRepository.save(inmueble);
+        }).orElseThrow(() -> new InmuebleNotFoundException(id));
 
+         return InmuebleResponse.fromInmueble(i);
     }
 
-    public void delete(Long id) throws  InmuebleNotFoundException{
-    Optional<Inmueble> i = inmuebleRepository.findById(id);
-    if (i.isPresent()){
-        inmuebleRepository.deleteById(id);
-    }else{
-        throw new InmuebleNotFoundException(id);
-    }
+    public void delete(Long id) throws InmuebleNotFoundException {
+        Optional<Inmueble> i = inmuebleRepository.findById(id);
+        if (i.isPresent()) {
+            inmuebleRepository.deleteById(id);
+        } else {
+            throw new InmuebleNotFoundException(id);
+        }
 
     }
+/*
+    public Tipo buscarTipo(String tipo){
+        if (tipo.equalsIgnoreCase("Casa")){
+            return tipoRepository.findById(1L).get();
+        } else if (tipo.equalsIgnoreCase("Piso")){
+            return tipoRepository.findById(2L).get();
+        }else{
+            return tipoRepository.findById(3L).get();
+
+
+        }
+
+    }
+    */
 
 
 }
