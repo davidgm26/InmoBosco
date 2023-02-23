@@ -19,6 +19,7 @@ public class InmuebleResponse {
     protected double metrosCuadrados;
     protected int numBanios;
     protected int numHab;
+    //protected String img;
 
 
     public static InmuebleResponse fromInmueble(Inmueble inmueble){
