@@ -5,6 +5,7 @@ import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.error.impl.Ap
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.exception.EmptyInmuebleListException;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.exception.InmuebleNotFoundException;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.exception.SameUserNameException;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.files.exceptions.StorageException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +41,11 @@ public class GlobalRestControllerAdvice extends ResponseEntityExceptionHandler {
     @Override
     protected ResponseEntity<Object> handleExceptionInternal(Exception ex, Object body, HttpHeaders headers, HttpStatus status, WebRequest request) {
         return buildApiError(ex, request, status);
+    }
+
+    @ExceptionHandler(StorageException.class)
+    public ResponseEntity<?> handleStorageException(StorageException ex, WebRequest request) {
+        return buildApiError(ex, request, HttpStatus.BAD_REQUEST);
     }
 
     private final ResponseEntity<Object> buildApiError(Exception ex, WebRequest request, HttpStatus status) {
