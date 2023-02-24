@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Builder
 public class Tipo {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String tipoInmueble;

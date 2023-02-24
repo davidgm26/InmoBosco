@@ -87,10 +87,14 @@ public class InmuebleService {
         //String tipo = tipoRepository.findByName(inmuebleRequest.getTipoInmueble()).toString();
          Inmueble i = inmuebleRepository.findById(id).map(inmueble -> {
             inmueble.setPrecio(inmuebleRequest.getPrecio());
-            //inmueble.setTipoInmueble(tipoRepository.findFirstBytipoInmuebleContainsIgnoreCase(inmuebleRequest.getTipoInmueble()));
-            //inmueble.setTipoInmueble(tipoRepository.findByName(inmuebleRequest.getTipoInmueble()));
+            //inmueble.setTipoInmueble(tipoRepository.findFirstByTipoInmuebleContainsIgnoreCase(inmuebleRequest.getTipoInmueble()));
+            inmueble.setTipoInmueble(tipoRepository.findByName(inmuebleRequest.getTipoInmueble()));
             //inmueble.setTipoInmueble(tipoRepository.findFirstBytipoInmuebleContainsIgnoreCase(inmuebleRequest.getTipoInmueble()));
             //inmueble.setTipoInmueble(buscarTipo(inmuebleRequest.getTipoInmueble()));
+           /* if(inmuebleRequest.getTipoInmueble().equalsIgnoreCase("casa"))
+                inmueble.setTipoInmueble(tipoRepository.findById(1L).get());
+
+            */
             inmueble.setProvincia(inmuebleRequest.getProvincia());
             inmueble.setUbicacion(inmuebleRequest.getUbicacion());
             inmueble.setDescripcion(inmuebleRequest.getDescripcion());
