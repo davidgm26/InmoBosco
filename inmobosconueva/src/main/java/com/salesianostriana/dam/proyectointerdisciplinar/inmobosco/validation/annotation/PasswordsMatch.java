@@ -19,4 +19,11 @@ public @interface PasswordsMatch {
 
     String passwordField();
     String verifyPasswordField();
+
+    @Target(ElementType.TYPE)
+    @Retention(RetentionPolicy.RUNTIME)
+    @interface List {
+        PasswordsMatch[] value();
+    }
+
 }

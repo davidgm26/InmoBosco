@@ -30,7 +30,6 @@ public class SecurityConfig {
 
     private final UserDetailsService userDetailsService;
     private final PasswordEncoder passwordEncoder;
-
     private final AuthenticationEntryPoint jwtAuthenticationEntryPoint;
     private final AccessDeniedHandler jwtAccessDeniedHandler;
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
@@ -75,6 +74,7 @@ public class SecurityConfig {
                         .and()
                                 .authorizeRequests()
                                 .antMatchers("/inmueble/**").hasRole("USER")
+                                .antMatchers("/auth/register").permitAll()
                                 .antMatchers("/auth/register/admin").hasRole("ADMIN")
                                 .anyRequest().authenticated();
 

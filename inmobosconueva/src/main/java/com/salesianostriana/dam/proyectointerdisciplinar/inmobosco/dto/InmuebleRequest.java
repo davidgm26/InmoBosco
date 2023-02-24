@@ -5,19 +5,28 @@ import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.model.Tipo;
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.repository.TipoRepository;
 import lombok.*;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class InmuebleRequest {
 
+    @NotNull
     private double precio;
+    @NotEmpty
     private String ubicacion;
+    @NotNull
     private double metrosCuadrados;
+
     private String provincia;
+
     private String descripcion;
-    protected String tipoInmueble;
     private int numBanios;
     private int numHab;
+
+    private String tipoInmueble;
 
 }

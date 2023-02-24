@@ -20,12 +20,6 @@ public class Inmueble {
     @GeneratedValue(strategy =GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "propietario_id",foreignKey = @ForeignKey(name = "FK_INMUEBLE_USUARIO"))
-    @CreatedBy
-    private Usuario propietario;
-
-
     private double precio;
 
     // libreria Vlad mihalcea hypersistence-utils

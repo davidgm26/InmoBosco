@@ -1,6 +1,7 @@
-package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.error.model;
+package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.error.model.errorAtributtes;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.error.model.ApiError;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.boot.web.servlet.error.DefaultErrorAttributes;
