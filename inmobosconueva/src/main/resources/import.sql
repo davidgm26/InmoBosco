@@ -5,6 +5,8 @@ INSERT INTO Tipo (id,tipo_inmueble) values (2,'Piso');
 
 INSERT INTO Tipo (id,tipo_inmueble) values (3,'Adosado');
 
+INSERT INTO Usuario(id,nombre,apellidos,password,password,roles,username,dni,edad,avatar,fecha_nacimiento,fecha_creacion,last_password_change_at,telefono,email,account_non_expired, account_non_locked, credentials_non_expired, enabled)VALUES()
+
 INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)VALUES (1, 125000.00, 1, 'Triana', 80.50, 'Sevilla', 'Apartamento reformado con vistas al río. Cocina americana con electrodomésticos. Suelos de tarima. Totalmente amueblado. Zona muy tranquila.', 1, 2);
 
 INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)VALUES (2, 240000.00, 2, 'Los Remedios', 120.00, 'Sevilla', 'Piso muy luminoso, 3 habitaciones y 2 baños. Cocina amueblada. Suelos de mármol. Garaje y trastero incluidos. Zona residencial tranquila.', 2, 3);

@@ -76,6 +76,7 @@ public class SecurityConfig {
                                 .antMatchers("/inmueble/**").hasRole("USER")
                                 .antMatchers("/auth/register").permitAll()
                                 .antMatchers("/auth/register/admin").hasRole("ADMIN")
+                                .antMatchers("/admin/**").hasRole("ADMIN")
                                 .anyRequest().authenticated();
 
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

@@ -75,6 +75,7 @@ public class Usuario implements UserDetails {
                     foreignKey = @ForeignKey(name = "FK_FAVORITOS_INMUEBLE")),
             name = "favoritos"
     )
+    @Builder.Default
     private List<Inmueble> inmueblesFav = new ArrayList<>();
 
     @Builder.Default

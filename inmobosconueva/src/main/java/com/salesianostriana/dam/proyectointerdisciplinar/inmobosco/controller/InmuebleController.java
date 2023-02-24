@@ -147,12 +147,12 @@ public class InmuebleController {
 
     }
 
-    @PostMapping("/")
+    @PostMapping("/admin/new")
     public Inmueble crearInmueble(@RequestBody InmuebleRequest inmuebleRequest, @RequestPart("files") MultipartFile file) {
         return inmuebleService.crearInmueble(inmuebleRequest,file);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/admin/{id}")
     public InmuebleResponse editarUnInmueble(@PathVariable Long id, @RequestBody InmuebleRequest inmuebleRequest) {
         return inmuebleService.edit(inmuebleRequest, id);
     }
@@ -173,7 +173,7 @@ public class InmuebleController {
                     description = "No se ha encontrado el inmueble",
                     content = @Content),
     })
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/admin/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id) {
         inmuebleService.delete(id);
         return ResponseEntity.noContent().build();
