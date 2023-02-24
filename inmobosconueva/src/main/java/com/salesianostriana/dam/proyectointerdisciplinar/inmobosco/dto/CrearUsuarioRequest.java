@@ -2,20 +2,20 @@ package com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.dto;
 
 
 import com.salesianostriana.dam.proyectointerdisciplinar.inmobosco.validation.annotation.PasswordsMatch;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
-@NoArgsConstructor @AllArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
-@PasswordsMatch(passwordField = "password", verifyPasswordField = "passwordRepeat" ,message = "")
+@PasswordsMatch.List({@PasswordsMatch(passwordField = "password", verifyPasswordField = "passwordRepeat", message = "")})
 public class CrearUsuarioRequest {
 
     @NotEmpty(message = "{CrearUsuarioRequest.nombre.notempty}")
@@ -36,7 +36,7 @@ public class CrearUsuarioRequest {
     @NotEmpty(message = "{CrearUsuarioRequest.dni.notempty}")
     private String dni;
 
-    @NotEmpty(message = "{CrearUsuarioRequest.edad.notempty}")
+    @NotNull(message = "{CrearUsuarioRequest.edad.notempty}")
     private int edad;
 
     @NotEmpty(message = "{CrearUsuarioRequest.avatar.notempty}")

@@ -21,16 +21,17 @@ public class PasswordMatchValidator implements ConstraintValidator<PasswordsMatc
     }
 
     @Override
-    public boolean isValid(Object o, ConstraintValidatorContext constraintValidatorContext) {
+    public boolean isValid(Object o, ConstraintValidatorContext context) {
 
-        String password = (String) PropertyAccessorFactory
-                .forBeanPropertyAccess(0)
-                .getPropertyValue(passwordField);
+        Object fieldValue = PropertyAccessorFactory
+                .forBeanPropertyAccess(o).getPropertyValue(passwordField);
+        Object fieldMatchValue = PropertyAccessorFactory
+                .forBeanPropertyAccess(o).getPropertyValue(verifyPasswordField);
 
-        String verifyPassword = (String) PropertyAccessorFactory
-                .forBeanPropertyAccess(0)
-                .getPropertyValue(verifyPasswordField);
-
-        return StringUtils.hasText(password) && password.contentEquals(verifyPassword);
+        if (fieldValue != null) {
+            return fieldValue.equals(fieldMatchValue);
+        } else {
+            return fieldMatchValue == null;
+        }
     }
 }
