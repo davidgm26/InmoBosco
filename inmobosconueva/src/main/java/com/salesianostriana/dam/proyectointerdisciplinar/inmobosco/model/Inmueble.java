@@ -32,7 +32,7 @@ public class Inmueble {
     //@ElementCollection(targetClass=String.class)
     private String img;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "tipo_id")
     private Tipo tipoInmueble;
 

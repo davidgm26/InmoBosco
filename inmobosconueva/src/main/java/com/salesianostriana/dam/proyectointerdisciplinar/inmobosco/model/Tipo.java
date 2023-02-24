@@ -12,14 +12,13 @@ import javax.persistence.*;
 @Setter
 @Builder
 public class Tipo {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String tipoInmueble;
 
-    @OneToOne(mappedBy = "tipoInmueble",fetch = FetchType.LAZY)
-    private Inmueble inmueble;
 
 
 }

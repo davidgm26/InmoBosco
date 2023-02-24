@@ -1,5 +1,8 @@
+
 INSERT INTO Tipo (id,tipo_inmueble) values (1,'Casa');
+
 INSERT INTO Tipo (id,tipo_inmueble) values (2,'Piso');
+
 INSERT INTO Tipo (id,tipo_inmueble) values (3,'Adosado');
 
 INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)VALUES (1, 125000.00, 1, 'Triana', 80.50, 'Sevilla', 'Apartamento reformado con vistas al río. Cocina americana con electrodomésticos. Suelos de tarima. Totalmente amueblado. Zona muy tranquila.', 1, 2);

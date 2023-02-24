@@ -20,6 +20,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -147,8 +148,8 @@ public class InmuebleController {
     }
 
     @PostMapping("/")
-    public Inmueble crearInmueble(@RequestBody InmuebleRequest inmuebleRequest) {
-        return inmuebleService.crearInmueble(inmuebleRequest);
+    public Inmueble crearInmueble(@RequestBody InmuebleRequest inmuebleRequest, @RequestPart("files") MultipartFile file) {
+        return inmuebleService.crearInmueble(inmuebleRequest,file);
     }
 
     @PutMapping("/{id}")

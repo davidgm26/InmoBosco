@@ -16,6 +16,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -63,7 +64,7 @@ public class InmuebleService {
         return inmuebleResponsePage;
     }
 
-    public Inmueble crearInmueble(InmuebleRequest inmuebleRequest) {
+    public Inmueble crearInmueble(InmuebleRequest inmuebleRequest, MultipartFile file) {
         Inmueble i = Inmueble.builder()
                 .descripcion(inmuebleRequest.getDescripcion())
                 .metrosCuadrados(inmuebleRequest.getMetrosCuadrados())
