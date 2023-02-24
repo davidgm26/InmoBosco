@@ -27,7 +27,6 @@ import java.util.stream.Collectors;
 @Builder
 public class Usuario implements UserDetails {
 
-    //En el DTO de respuesta tienes que devolver el rol
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(
