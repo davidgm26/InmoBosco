@@ -22,7 +22,8 @@ public interface InmuebleRepository extends JpaRepository<Inmueble, Long>, JpaSp
                     t.tipoInmueble,i.descripcion,i.precio,i.ubicacion,i.metrosCuadrados,i.numHab,i.numBanios)
                 from Inmueble i LEFT JOIN i.tipoInmueble t
                 where i.id = :id
-                """
+                
+           """
     )
     InmuebleResponse nuevoDto(Long id);
 
@@ -32,4 +33,13 @@ public interface InmuebleRepository extends JpaRepository<Inmueble, Long>, JpaSp
             where t.tipoInmueble =:tipo
             """)
     Page<Inmueble> todosDeUnTipoInmbueble(@Param("tipo") String tipo, Pageable pageable);
+/*
+    @Query("""
+            select i
+            from Inmueble i 
+            where i.provincia =:provincia
+            """)
+
+ */
+    Page<Inmueble>findAllByProvinciaIgnoreCase(String provincia, Pageable pageable);
 }

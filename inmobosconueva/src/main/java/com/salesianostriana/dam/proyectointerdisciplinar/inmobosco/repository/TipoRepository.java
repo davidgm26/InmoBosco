@@ -10,13 +10,5 @@ public interface TipoRepository extends JpaRepository<Tipo,Long> {
     Tipo findFirstByTipoInmuebleContainsIgnoreCase(String tipoInmueble);
 
 
-
-    @Query("""
-            SELECT t
-            from Tipo t
-            where t.tipoInmueble =:tipo
-            """)
-     Tipo findByName(String tipo);
-
 }
 

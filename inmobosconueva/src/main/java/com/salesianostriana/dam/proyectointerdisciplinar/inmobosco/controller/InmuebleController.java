@@ -179,28 +179,10 @@ public class InmuebleController {
         return ResponseEntity.noContent().build();
     }
 
-
-
-
 /*
-    @PreAuthorize("@inmuebleService.findById(#id).orElse(new net.openwebinars.springboot.restjwt.note.model.Note()).author == authentication.principal.getId().toString()")
-    @PutMapping("/{id}")
-    public ResponseEntity<Note> edit(@PathVariable Long id, @RequestBody Note edited) {
-
-
-        return ResponseEntity.of(
-                repository.findById(id)
-                        .map(note -> {
-                            note.setTitle(edited.getTitle());
-                            note.setContent(edited.getContent());
-                            //note.setAuthor(edited.getAuthor());
-                            note.setImportant(edited.isImportant());
-                            return repository.save(note);
-                        }));
-
-
-
+    @GetMapping("/{provincia}")
+    public Page<InmuebleResponse> traerPorProvincia(@PathVariable String provincia,Pageable pageable){
+        return inmuebleService.buscarTodosDeUnaProvincia(provincia,pageable);
     }
-
- */
+*/
 }

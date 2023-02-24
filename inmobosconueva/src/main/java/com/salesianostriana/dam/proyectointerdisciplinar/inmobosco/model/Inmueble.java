@@ -36,7 +36,6 @@ public class Inmueble {
     @JoinColumn(name = "tipo_id")
     private Tipo tipoInmueble;
 
-    @NotEmpty
     private String ubicacion;
 
     private double metrosCuadrados;

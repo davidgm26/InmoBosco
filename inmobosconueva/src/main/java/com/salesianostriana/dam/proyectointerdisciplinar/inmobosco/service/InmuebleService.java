@@ -88,14 +88,7 @@ public class InmuebleService {
         //String tipo = tipoRepository.findByName(inmuebleRequest.getTipoInmueble()).toString();
          Inmueble i = inmuebleRepository.findById(id).map(inmueble -> {
             inmueble.setPrecio(inmuebleRequest.getPrecio());
-            //inmueble.setTipoInmueble(tipoRepository.findFirstByTipoInmuebleContainsIgnoreCase(inmuebleRequest.getTipoInmueble()));
-            inmueble.setTipoInmueble(tipoRepository.findByName(inmuebleRequest.getTipoInmueble()));
-            //inmueble.setTipoInmueble(tipoRepository.findFirstBytipoInmuebleContainsIgnoreCase(inmuebleRequest.getTipoInmueble()));
-            //inmueble.setTipoInmueble(buscarTipo(inmuebleRequest.getTipoInmueble()));
-           /* if(inmuebleRequest.getTipoInmueble().equalsIgnoreCase("casa"))
-                inmueble.setTipoInmueble(tipoRepository.findById(1L).get());
-
-            */
+            inmueble.setTipoInmueble(tipoRepository.findFirstByTipoInmuebleContainsIgnoreCase(inmuebleRequest.getTipoInmueble()));
             inmueble.setProvincia(inmuebleRequest.getProvincia());
             inmueble.setUbicacion(inmuebleRequest.getUbicacion());
             inmueble.setDescripcion(inmuebleRequest.getDescripcion());
@@ -115,20 +108,16 @@ public class InmuebleService {
         }
 
     }
-/*
-    public Tipo buscarTipo(String tipo){
-        if (tipo.equalsIgnoreCase("Casa")){
-            return tipoRepository.findById(1L).get();
-        } else if (tipo.equalsIgnoreCase("Piso")){
-            return tipoRepository.findById(2L).get();
-        }else{
-            return tipoRepository.findById(3L).get();
 
 
-        }
+    /*
 
+    public Page<InmuebleResponse>buscarTodosDeUnaProvincia(String provincia,Pageable pageable){
+        Page<Inmueble> result = inmuebleRepository.findAllByProvinciaIgnoreCase(provincia,pageable);
+        Page<InmuebleResponse> inmuebleResponsePage = new PageImpl<>(result.stream().toList(), pageable, result.getTotalPages()).map(InmuebleResponse::fromInmueble);
+        return inmuebleResponsePage;
     }
-    */
 
+    */
 
 }
