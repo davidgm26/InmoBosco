@@ -24,24 +24,29 @@ public class CrearUsuarioRequest {
     @NotEmpty(message = "{CrearUsuarioRequest.apellidos.notempty}")
     private String apellidos;
 
-   // @NotEmpty(message = "{CrearUsuarioRequest.password.notempty}")
+    @NotEmpty(message = "{CrearUsuarioRequest.password.notempty}")
     private String password;
 
-    //@NotEmpty(message = "{CrearUsuarioRequest.passwordRepeat.notempty}")
+    @NotEmpty(message = "{CrearUsuarioRequest.passwordRepeat.notempty}")
     private String passwordRepeat;
 
     @NotEmpty(message = "{CrearUsuarioRequest.userName.notempty}")
     private String userName;
 
+    @NotEmpty(message = "{CrearUsuarioRequest.dni.notempty}")
     private String dni;
 
+    @NotEmpty(message = "{CrearUsuarioRequest.edad.notempty}")
     private int edad;
 
+    @NotEmpty(message = "{CrearUsuarioRequest.avatar.notempty}")
     private String avatar;
 
     private LocalDate fechaNacimiento;
 
+    @NotEmpty(message = "{CrearUsuarioRequest.telefono.notempty}")
     private String telefono;
 
+    @NotEmpty(message = "{CrearUsuarioRequest.email.notempty}")
     private String email;
 }
