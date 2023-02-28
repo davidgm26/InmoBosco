@@ -27,7 +27,7 @@ public class Inmueble {
     private String img;
 
     @ManyToOne
-    @JoinColumn(name = "tipo_id")
+    @JoinColumn(name = "tipo_id",foreignKey = @ForeignKey(name = "TIPO_INMUEBLE") )
     private Tipo tipoInmueble;
 
     private String ubicacion;

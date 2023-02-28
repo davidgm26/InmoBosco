@@ -100,7 +100,7 @@ public class InmuebleController {
     })
     @GetMapping("/")
     public Page<InmuebleResponse> listarTodosLosInmuebles(@RequestParam(value = "search", defaultValue = "") String search,
-                                                          @PageableDefault(size = 20, page = 0) Pageable pageable) {
+                                                          @PageableDefault(size = 5, page = 0) Pageable pageable) {
 
         List<SearchCriteria> params = SearchCriteriaExtractor.extractSearchCriteriaList(search);
         return inmuebleService.findAll(params, pageable);

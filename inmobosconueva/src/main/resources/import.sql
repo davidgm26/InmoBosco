@@ -5,7 +5,9 @@ INSERT INTO Tipo (id,tipo_inmueble) values (2,'Piso');
 
 INSERT INTO Tipo (id,tipo_inmueble) values (3,'Adosado');
 
-INSERT INTO Usuario(id,nombre,apellidos,password,password,roles,username,dni,edad,avatar,fecha_nacimiento,fecha_creacion,last_password_change_at,telefono,email,account_non_expired, account_non_locked, credentials_non_expired, enabled)VALUES()
+--INSERT INTO Usuario(id,nombre,apellidos,password,roles,username,dni,edad,avatar,fecha_nacimiento,fecha_creacion,last_password_change_at,telefono,email,account_non_expired, account_non_locked, credentials_non_expired, enabled)VALUES ('ac1d8001-8692-1867-8186-9278e5b50000','David','García María','{bcrypt}$2a$12$/yH88WQ3BHjIVl43tenYF.CSSokhlYu4ExypaEIuE9KxKVk3eTu1G','USER','Martinex','85995544X',21,'https://robohash.org/81.36.52.170.png','2002-04-26','2021-09-03 17:35:43','2022-09-03 17:35:43','648627905','vivaelsevilla@gmail.com','true','true','true','true');--Password: WiWE62tvsx2
+
+--INSERT INTO Usuario(id,nombre,apellidos,password,roles,username,dni,edad,avatar,fecha_nacimiento,fecha_creacion,last_password_change_at,telefono,email,account_non_expired, account_non_locked, credentials_non_expired, enabled)VALUES (2,'Antonio','Martinez Ares','{bcrypt}$2a$12$PF/Vq6OknYqUtvB/bkBn0.I76xYuVsM85iCX32D91wXuwMwDtW/.G','ADMIN','ElBrujo','41559184S',40,'https://robohash.org/81.36.52.180.png','2002-04-26','2022-09-03 17:35:43','2022-09-03 17:35:43','688921407','vivaelsevilla@gmail.com','true','true','true','true');--Password: 12345678
 
 INSERT INTO Inmueble (id, precio, tipo_id, ubicacion, metros_cuadrados, provincia, descripcion, num_banios, num_hab)VALUES (1, 125000.00, 1, 'Triana', 80.50, 'Sevilla', 'Apartamento reformado con vistas al río. Cocina americana con electrodomésticos. Suelos de tarima. Totalmente amueblado. Zona muy tranquila.', 1, 2);
 
